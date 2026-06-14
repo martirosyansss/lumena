@@ -98,7 +98,7 @@ section{padding:var(--space-9) 0;scroll-margin-top:84px}
 .sec-h h2{font-size:var(--fs-h1);margin-bottom:var(--space-3)}
 .sec-h p{color:var(--color-text-secondary);font-size:var(--fs-body-l)}
 .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:1.02rem;padding:14px 26px;border-radius:var(--radius-pill);border:none;cursor:pointer;text-decoration:none;transition:transform .2s var(--ease-soft),box-shadow .2s,background .2s}
-.btn--p{background:var(--color-accent);color:var(--color-primary-deep);box-shadow:var(--shadow-glow)}
+.btn--p{background:var(--color-accent);color:var(--color-primary-deep);box-shadow:var(--shadow-md)}
 .btn--p:hover{transform:translateY(-2px)}
 .btn--g{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
 .btn--g:hover{border-color:#fff;background:rgba(255,255,255,.08)}
@@ -229,33 +229,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   .reveal{opacity:1;transform:none;transition:none}
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
 }
-/* ============ Спецэффекты («ярко и заметно») ============ */
-/* прогресс-бар прокрутки */
-.fx-bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;background:linear-gradient(90deg,var(--color-accent),var(--color-accent-gold));box-shadow:0 0 12px rgba(244,162,76,.6)}
-/* свечение за курсором */
-.cursor-glow{position:fixed;left:0;top:0;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:55;background:radial-gradient(circle,rgba(244,162,76,.16),rgba(244,162,76,0) 62%);mix-blend-mode:screen;opacity:0;transition:opacity .5s;will-change:transform}
-/* hero: медленный ken-burns фона */
-.hero__bg{will-change:transform;animation:kenburns 26s ease-in-out infinite alternate}
-@keyframes kenburns{from{transform:scale(1.05)}to{transform:scale(1.16) translate3d(-2%,-2%,0)}}
-/* hero: световые орбы и луч */
-.hero__fx{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
-.hero__fx .orb{position:absolute;border-radius:50%;filter:blur(46px);mix-blend-mode:screen;background:radial-gradient(circle,rgba(244,162,76,.5),rgba(244,162,76,0) 70%);animation:floaty 16s ease-in-out infinite}
-@keyframes floaty{0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.32}50%{transform:translate3d(2vw,-3vh,0) scale(1.25);opacity:.66}}
-.hero__ray{position:absolute;top:-40%;left:24%;width:54%;height:180%;transform:rotate(8deg);filter:blur(7px);background:linear-gradient(100deg,transparent 0,rgba(244,162,76,.10) 46%,rgba(255,255,255,.18) 50%,rgba(244,162,76,.10) 54%,transparent 100%);animation:raysweep 9s ease-in-out infinite}
-@keyframes raysweep{0%,100%{transform:translateX(-32%) rotate(8deg);opacity:0}50%{transform:translateX(30%) rotate(8deg);opacity:.9}}
-/* параллакс-слой Еревана */
-.dest__bg{will-change:transform}
-/* 3D-наклон карточек */
-.fx-tilt{transition:transform .3s var(--ease-soft),box-shadow .3s}
-.fx-tilt.is-tilting{transition:transform .09s linear,box-shadow .3s;box-shadow:var(--shadow-lg)}
-/* кнопка: блик + пульс свечения */
-.btn--p{position:relative;overflow:hidden;animation:glowpulse 3.6s ease-in-out infinite}
-.btn--p::after{content:"";position:absolute;top:0;bottom:0;left:0;width:100%;pointer-events:none;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.5) 50%,transparent 62%);transform:translateX(-130%);animation:shine 5s ease-in-out infinite}
-@keyframes shine{0%,58%{transform:translateX(-130%)}80%,100%{transform:translateX(130%)}}
-@keyframes glowpulse{0%,100%{box-shadow:0 8px 24px rgba(244,162,76,.28)}50%{box-shadow:0 0 26px rgba(244,162,76,.5),0 10px 44px rgba(244,162,76,.3)}}
-/* плавающая кнопка: лёгкий пульс */
-.fab{animation:fabpulse 3s ease-in-out infinite}
-@keyframes fabpulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+/* Декоративные эффекты убраны намеренно (спокойная медицинская подача).
+   Кнопки/карточки — только мягкий hover из основных стилей выше. */
 /* ============ Конверсионные фишки (по мотивам Bookimed) ============ */
 /* trust-bar со счётчиками */
 .statbar{padding:var(--space-6) 0;background:var(--color-surface);border-bottom:1px solid var(--color-border)}
@@ -334,7 +309,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   <div class="wrap"><div class="hero__in">
     <span class="eyebrow">Лечение в клиниках Армении — под ключ</span>
     <h1>Лечение, которое не приходится откладывать из-за цены</h1>
-    <p class="hero__sub">«Люмена» помогает спокойно пройти лечение в проверенных клиниках Армении: подбираем клинику под ваш случай, заранее считаем понятную смету «под ключ», встречаем в Ереване и сопровождаем 24/7. Перелёт из Москвы — 2,5–3 часа, без виз и языкового барьера. Свет на пути к здоровью — и человек рядом до конца.</p>
+    <p class="hero__sub">«Люмена» помогает спокойно пройти лечение в проверенных клиниках Армении: подбираем клинику под ваш случай, заранее считаем понятную смету «под ключ», встречаем в Ереване и сопровождаем 24/7. Перелёт из Москвы — 2,5–3 часа, без виз и языкового барьера, с русскоязычным персоналом в клиниках.</p>
     <div class="hero__cta"><a class="btn btn--p" href="#cta">Получить бесплатный расчёт</a><a class="btn btn--g" href="#how">Спросить в Telegram / WhatsApp</a></div>
     <div class="hero__badges"><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Ориентир экономии 30–60% к частной Москве</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Без виз — въезд по паспорту РФ</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Перелёт 2,5–3 часа</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Личный координатор 24/7</div></div>
   </div></div>
@@ -429,7 +404,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   <div class="sec-h"><span class="eyebrow">Вопросы и ответы</span><h2>Частые вопросы — честные ответы</h2></div>
   <div class="faqs"><details class="faq__i reveal"><summary>А качество лечения там точно достойное?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>Мы работаем с многопрофильными клиниками и профильными центрами Армении — с современным оборудованием, опытными врачами и репутацией среди пациентов, в том числе из России. При этом мы не клиника и не даём обещаний по результату лечения: его определяют врач и ваш конкретный случай. Перед лечением обязательна очная консультация специалиста. Имеются противопоказания, необходима консультация специалиста.</p></div></details><details class="faq__i reveal"><summary>Кто отвечает, если в ходе лечения возникнут вопросы?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>За медицинскую часть отвечает клиника, с которой вы заключаете прямой договор, — как и в любой клинике дома. «Люмена» отвечает за организацию: подбор, координацию, сопровождение и связь с клиникой. Если возникает вопрос, ваш координатор помогает быстро выйти на врача и разобраться в ситуации.</p></div></details><details class="faq__i reveal"><summary>Это вообще не развод? Как понять, что вам можно доверять?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>Понимаем такое опасение — поэтому строим всё на прозрачности. За лечение вы платите напрямую клинике по её договору, деньги не проходят через нас. Смету «под ключ» вы видите заранее, до поездки. Расчёт и подбор клиники бесплатны и ни к чему вас не обязывают — можно спокойно всё взвесить и решить.</p></div></details><details class="faq__i reveal"><summary>Сколько в итоге я заплачу и нет ли скрытых доплат?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>Мы заранее показываем смету «под ключ»: лечение, перелёт, проживание, трансферы. Цены на сайте — это диапазоны-ориентиры, а не ваша персональная смета. Итоговая стоимость индивидуальна и зависит от клиники, материалов и сложности случая — её мы рассчитаем для вас бесплатно перед поездкой, чтобы сюрпризов на месте не было.</p></div></details><details class="faq__i reveal"><summary>Насколько это безопасно — ехать лечиться в другую страну?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>Армения — страна ЕАЭС: въезд по внутреннему паспорту РФ, без виз. Перелёт из Москвы — 2,5–3 часа, в клиниках есть русскоязычный персонал, а ваш координатор на связи 24/7 на всём пути. Вся поездка обычно занимает от 3 до 14 дней. Решение о возможности лечения принимает врач после очной консультации.</p></div></details><details class="faq__i reveal"><summary>Я по поводу ЭКО и репродукции — это конфиденциально?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>Да, полная приватность — наш приоритет. Мы деликатно помогаем с доступом к легальным для граждан России программам, включая суррогатное материнство и донорские программы, которые сегодня в РФ ограничены. Общение ведём бережно и только по тем каналам, которые удобны вам. Все медицинские вопросы решаются с профильными специалистами клиники.</p></div></details></div></div></section>
 <section id="cta" class="cta"><div class="wrap"><div class="cta__grid">
-  <div class="cta__text"><h2>Сделайте первый спокойный шаг</h2><p>Расскажите о своей ситуации — мы бесплатно подберём подходящую клинику и посчитаем смету «под ключ» за 1 день. Это ни к чему вас не обязывает: вы просто получите ясную картину и сможете спокойно решить. Свет на пути к здоровью — и человек рядом до конца.</p><div class="hero__badges"><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Ориентир экономии 30–60% к частной Москве</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Без виз — въезд по паспорту РФ</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Перелёт 2,5–3 часа</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Личный координатор 24/7</div></div></div>
+  <div class="cta__text"><h2>Сделайте первый спокойный шаг</h2><p>Расскажите о своей ситуации — мы бесплатно подберём подходящую клинику и посчитаем смету «под ключ» за 1 день. Это ни к чему вас не обязывает: вы просто получите ясную картину и сможете спокойно решить.</p><div class="hero__badges"><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Ориентир экономии 30–60% к частной Москве</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Без виз — въезд по паспорту РФ</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Перелёт 2,5–3 часа</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Личный координатор 24/7</div></div></div>
   <form class="cta__form" onsubmit="return false" aria-label="Заявка на бесплатный расчёт">
     <label class="fld"><span>Как к вам обращаться <span class="req" aria-hidden="true">*</span></span><input type="text" autocomplete="name" required></label><label class="fld"><span>Телефон или мессенджер (Telegram / WhatsApp) <span class="req" aria-hidden="true">*</span></span><input type="tel" inputmode="tel" autocomplete="tel" required placeholder="+7 ___ ___-__-__"></label><label class="fld"><span>Какое направление интересует</span><select autocomplete="off"><option>Стоматология</option><option>Пластическая хирургия</option><option>ЭКО / репродукция</option><option>Хирургия</option><option>Чек-ап</option><option>Не определился(ась)</option></select></label><label class="fld"><span>Коротко о вашей задаче (по желанию)</span><input type="text"></label><div class="fld"><span>Куда координатору удобнее вам написать?</span><div class="chan" role="radiogroup" aria-label="Предпочтительный канал связи">
       <input type="radio" name="chan" id="ch-tg" checked><label for="ch-tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4 3 11l5 2 2 6 3-4 5 4z"/><path d="M8 13l9-7"/></svg>Telegram</label>
@@ -458,38 +433,7 @@ var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!rm){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(function(x){io.observe(x)});}
 
-/* ===== Спецэффекты ===== */
-if(!rm){(function(){
-  // прогресс-бар
-  var bar=document.createElement('div');bar.className='fx-bar';document.body.appendChild(bar);
-  // свечение за курсором
-  var glow=document.createElement('div');glow.className='cursor-glow';document.body.appendChild(glow);
-  var gx=innerWidth/2,gy=innerHeight/2,cx=gx,cy=gy,shown=false;
-  addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;gx=e.clientX;gy=e.clientY;if(!shown){shown=true;glow.style.opacity='1'}},{passive:true});
-  // hero: орбы + луч
-  var hero=document.querySelector('.hero');
-  if(hero){var fx=document.createElement('div');fx.className='hero__fx';
-    [[150,'10%','58%','0s'],[210,'72%','18%','-4s'],[120,'46%','80%','-8s'],[170,'88%','62%','-2s']].forEach(function(c){
-      var o=document.createElement('div');o.className='orb';o.style.width=o.style.height=c[0]+'px';o.style.left=c[1];o.style.top=c[2];o.style.animationDelay=c[3];fx.appendChild(o)});
-    var ray=document.createElement('div');ray.className='hero__ray';fx.appendChild(ray);hero.appendChild(fx);}
-  // 3D-наклон карточек
-  document.querySelectorAll('.dir,.step,.why__c,.tp,.tcard,.pain').forEach(function(c){
-    c.classList.add('fx-tilt');
-    c.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;var r=c.getBoundingClientRect();var px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.classList.add('is-tilting');c.style.transform='perspective(900px) rotateX('+(-py*6).toFixed(2)+'deg) rotateY('+(px*7).toFixed(2)+'deg) translateY(-4px)'});
-    c.addEventListener('pointerleave',function(){c.classList.remove('is-tilting');c.style.transform=''});
-  });
-  // стаггер появлений (по соседям внутри одного контейнера)
-  var seen=new Map();
-  document.querySelectorAll('.reveal').forEach(function(el){var p=el.parentNode,i=seen.get(p)||0;el.style.transitionDelay=(i*90)+'ms';seen.set(p,i+1)});
-  // rAF: прогресс, инерция свечения, параллакс Еревана
-  var dest=document.querySelector('.dest__bg'),de=document.documentElement;
-  function loop(){
-    var max=de.scrollHeight-de.clientHeight;bar.style.width=(max>0?(de.scrollTop||document.body.scrollTop)/max*100:0)+'%';
-    cx+=(gx-cx)*.18;cy+=(gy-cy)*.18;glow.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0) translate(-50%,-50%)';
-    if(dest){var r=dest.parentNode.getBoundingClientRect();dest.style.transform='scale(1.22) translateY('+((r.top+r.height/2-innerHeight/2)*-0.06).toFixed(1)+'px)'}
-    requestAnimationFrame(loop);
-  }
-  requestAnimationFrame(loop);
-})();}
+/* Спокойная подача: только мягкое появление при скролле (выше).
+   Декоративные эффекты убраны намеренно — медицине нужна солидность, а не «диско». */
 </script>
 </body></html>
