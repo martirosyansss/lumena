@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0F2E3D">
+<title>Люмена — лечение в клиниках Армении под ключ | Дешевле частной Москвы на 30–60%</title>
+<meta name="description" content="«Люмена» организует лечение в Армении под ключ: стоматология, пластика, чек-апы, репродукция. Ориентир экономии 30–60% к частной Москве, без виз, с личным координатором 24/7. Бесплатный расчёт сметы за 1 день. Имеются противопоказания, необходима консультация специалиста.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* ---- Brand Colors ---- */
+  --color-primary: #1E5F74;            /* Trust Teal — база доверия, кнопки, ссылки */
+  --color-primary-deep: #0F2E3D;       /* Deep Navigator — главный тёмный, текст, тёмные секции */
+  --color-primary-hover: #18506A;      /* hover для primary */
+  --color-accent: #F4A24C;             /* Hope Amber — свет надежды, гало, акценты */
+  --color-accent-gold: #E8C27A;        /* Dawn Gold — премиум-линии, фольга, тонкие рамки */
+  --color-accent-soft: #FBEAD2;        /* Dawn Glow — тёплая подложка секций заботы */
+
+  /* ---- Neutrals (warm) ---- */
+  --color-bg: #FBF8F3;                 /* Warm Light — основной фон страницы (не чистый белый) */
+  --color-surface: #FFFFFF;            /* карточки на тёплом фоне */
+  --color-surface-warm: #FBEAD2;       /* тёплые карточки заботы */
+  --color-border: #EAE4DA;             /* Mist — границы, разделители, инпуты */
+  --color-text: #0F2E3D;               /* основной текст — Deep Navigator */
+  --color-text-secondary: #3E4A52;     /* Calm Graphite — вторичный текст, дисклеймеры */
+  --color-text-on-dark: #FBF8F3;       /* текст на тёмных секциях */
+  --color-text-on-accent: #0F2E3D;     /* ТОЛЬКО тёмный текст на янтаре (контраст AA) */
+
+  /* ---- Semantic ---- */
+  --color-success: #3F8F6E;            /* Clear Green — успех/на связи (крупные элементы) */
+  --color-success-text: #2E6E54;       /* затемнённый для мелкого текста (AA) */
+  --color-attention: #C9742E;          /* Soft Alert — мягкое внимание (НЕ красный) */
+  --color-info: #1E5F74;               /* инфо = Trust Teal */
+
+  /* ---- Typography ---- */
+  --font-heading: 'Onest', 'Golos Text', 'PT Root UI', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Golos Text', 'Onest', 'PT Root UI', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* Type scale (Major Third 1.25, base 16px) */
+  --fs-display: clamp(2.5rem, 4vw, 3.5rem);  /* 40–56px H0 hero */
+  --fs-h1: clamp(2rem, 3vw, 2.75rem);        /* 32–44px */
+  --fs-h2: 2.125rem;                          /* 34px */
+  --fs-h3: 1.625rem;                          /* 26px */
+  --fs-h4: 1.25rem;                           /* 20px lead */
+  --fs-body-l: 1.125rem;                      /* 18px */
+  --fs-body: 1rem;                            /* 16px */
+  --fs-small: 0.875rem;                       /* 14px */
+  --fs-micro: 0.8125rem;                      /* 13px дисклеймер */
+  --lh-tight: 1.12;
+  --lh-snug: 1.25;
+  --lh-body: 1.6;
+  --ls-display: -0.015em;
+  --ls-overline: 0.06em;
+
+  /* ---- Radius ---- */
+  --radius-sm: 8px;
+  --radius-md: 12px;     /* кнопки, инпуты */
+  --radius-lg: 16px;     /* карточки */
+  --radius-xl: 24px;     /* крупные блоки/hero */
+  --radius-pill: 999px;  /* теги, статус-пилюли */
+
+  /* ---- Spacing (8px ритм) ---- */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --space-9: 96px; --space-10: 128px;
+  --container-max: 1280px;
+  --content-measure: 68ch;
+
+  /* ---- Shadows (warm, soft — не чёрные) ---- */
+  --shadow-sm: 0 1px 2px rgba(15, 46, 61, 0.06);
+  --shadow-md: 0 6px 20px rgba(15, 46, 61, 0.08);
+  --shadow-lg: 0 16px 48px rgba(15, 46, 61, 0.12);
+  --shadow-glow: 0 0 64px rgba(244, 162, 76, 0.28); /* тёплое свечение «света» */
+
+  /* ---- Signature light gradients ---- */
+  --grad-dawn: radial-gradient(120% 120% at 80% 0%, #FBEAD2 0%, #FBF8F3 55%, #FBF8F3 100%);
+  --grad-hero-dark: radial-gradient(90% 120% at 85% 10%, rgba(244,162,76,0.35) 0%, rgba(15,46,61,0) 55%), #0F2E3D;
+  --grad-mark: linear-gradient(180deg, #F4A24C 0%, #1E5F74 70%, #0F2E3D 100%);
+
+  /* ---- Motion ---- */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-base: 320ms;
+  --dur-slow: 480ms;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--color-bg);color:var(--color-text);line-height:var(--lh-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15;letter-spacing:var(--ls-display);font-weight:700}
+.wrap{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-5)}
+section{padding:var(--space-9) 0;scroll-margin-top:84px}
+.sec-h{text-align:center;max-width:760px;margin:0 auto var(--space-7)}
+.eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.07em;font-size:var(--fs-micro);font-weight:700;color:var(--color-primary);margin-bottom:var(--space-3)}
+.eyebrow::before{content:"";display:inline-block;width:20px;height:2px;background:var(--color-accent);vertical-align:middle;margin-right:9px}
+.sec-h h2{font-size:var(--fs-h1);margin-bottom:var(--space-3)}
+.sec-h p{color:var(--color-text-secondary);font-size:var(--fs-body-l)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:1.02rem;padding:14px 26px;border-radius:var(--radius-pill);border:none;cursor:pointer;text-decoration:none;transition:transform .2s var(--ease-soft),box-shadow .2s,background .2s}
+.btn--p{background:var(--color-accent);color:var(--color-primary-deep);box-shadow:var(--shadow-glow)}
+.btn--p:hover{transform:translateY(-2px)}
+.btn--g{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.btn--g:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn--d{background:var(--color-primary);color:#fff}
+.btn--d:hover{background:var(--color-primary-hover);transform:translateY(-2px)}
+svg{width:1em;height:1em}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--color-accent);outline-offset:2px;border-radius:6px}
+.hdr{position:sticky;top:0;z-index:60;background:rgba(251,248,243,.85);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.hdr.scrolled{border-color:var(--color-border);box-shadow:var(--shadow-sm)}
+.hdr__in{display:flex;align-items:center;gap:var(--space-5);height:68px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--color-text)}
+.brand img{width:36px;height:36px}
+.brand b{font-family:var(--font-heading);font-weight:800;font-size:1.25rem}
+.hdr__nav{display:flex;gap:var(--space-5);margin-left:auto}
+.hdr__nav a{color:var(--color-text-secondary);text-decoration:none;font-size:var(--fs-small);font-weight:500}
+.hdr__nav a:hover{color:var(--color-text)}
+.hdr__cta{margin-left:var(--space-4)}
+.hdr .btn{padding:10px 20px;font-size:.95rem}
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;background:var(--color-primary-deep);overflow:hidden}
+.hero__bg{position:absolute;inset:0;background:url('assets/lumena-hero.jpg') center right/cover}
+.hero__veil{position:absolute;inset:0;background:linear-gradient(95deg,var(--color-primary-deep) 4%,rgba(15,46,61,.82) 34%,rgba(15,46,61,.3) 66%,rgba(15,46,61,0))}
+.hero__in{position:relative;z-index:2;max-width:660px;text-align:left;color:#fff;padding:var(--space-8) 0}
+.hero .eyebrow{color:var(--color-accent-gold)}
+.hero h1{font-size:clamp(1.9rem,5.4vw,3.5rem);font-weight:800;color:#fff;margin-bottom:var(--space-4);line-height:1.1;overflow-wrap:break-word;text-shadow:0 2px 20px rgba(0,0,0,.38)}
+.hero__sub{font-size:var(--fs-h4);color:#EAD9BE;font-weight:400;margin:0 0 var(--space-6);max-width:600px;text-shadow:0 1px 14px rgba(0,0,0,.3)}
+.hero__cta{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-7)}
+.hero__badges{display:flex;gap:var(--space-5);flex-wrap:wrap}
+.tb{display:flex;align-items:center;gap:8px;font-size:var(--fs-small);color:#DCE8E6;font-weight:500}
+.tb__i{color:var(--color-accent);font-size:1.2rem;display:inline-flex}
+.pains{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-4)}
+.pain{background:var(--color-surface);border:1px solid var(--color-border);border-left:3px solid var(--color-attention);border-radius:var(--radius-lg);padding:var(--space-5);box-shadow:var(--shadow-sm)}
+.pain h3{font-size:1.12rem;margin-bottom:8px;color:var(--color-primary-deep)}
+.pain p{font-size:var(--fs-small);color:var(--color-text-secondary)}
+.how{background:var(--grad-dawn)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:var(--space-5)}
+.step{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4);box-shadow:var(--shadow-sm);position:relative}
+.step__img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);display:block}
+.step__n{position:absolute;top:calc(var(--space-4) + 10px);left:calc(var(--space-4) + 10px);width:40px;height:40px;border-radius:50%;background:var(--color-primary-deep);color:var(--color-accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;font-size:1.15rem;box-shadow:var(--shadow-md)}
+.step h3{font-size:1.1rem;margin:0 var(--space-2) 8px;padding:0 var(--space-2)}
+.step p{font-size:var(--fs-small);color:var(--color-text-secondary);padding:0 var(--space-2) var(--space-2)}
+.dest{position:relative;min-height:380px;display:flex;align-items:center;color:#fff;overflow:hidden}
+.dest__bg{position:absolute;inset:0;background:url('assets/lumena-yerevan.jpg') center/cover}
+.dest__veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,46,61,.9) 0%,rgba(15,46,61,.55) 45%,rgba(15,46,61,.2) 100%)}
+.dest__in{position:relative;z-index:2;max-width:620px}
+.dest h2{font-size:var(--fs-h1);color:#fff;margin-bottom:var(--space-3)}
+.dest p{font-size:var(--fs-body-l);color:#E9DFCE}
+.dirs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--space-4)}
+.dir{position:relative;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6);box-shadow:var(--shadow-sm);transition:transform .25s var(--ease-soft),box-shadow .25s}
+.dir:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.dir--pop{border-color:var(--color-accent);box-shadow:var(--shadow-glow)}
+.dir__pop{position:absolute;top:-11px;right:16px;background:var(--color-accent);color:var(--color-primary-deep);font-family:var(--font-heading);font-weight:700;font-size:var(--fs-micro);padding:4px 12px;border-radius:var(--radius-pill)}
+.dir__i{width:52px;height:52px;border-radius:var(--radius-md);background:var(--color-accent-soft);color:var(--color-primary);display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin-bottom:var(--space-4)}
+.dir h3{font-size:1.18rem;margin-bottom:6px}
+.dir__save{display:inline-block;font-family:var(--font-heading);font-weight:700;color:var(--color-success-text);background:#E9F3EE;padding:3px 12px;border-radius:var(--radius-pill);font-size:var(--fs-small);margin-bottom:var(--space-3)}
+.dir p{font-size:var(--fs-small);color:var(--color-text-secondary)}
+.why{background:var(--color-primary-deep);color:#fff}
+.why .sec-h h2{color:#fff}.why .sec-h p{color:#BBD0CD}
+.why__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-5)}
+.why__c{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:var(--space-6)}
+.why__i{width:54px;height:54px;border-radius:var(--radius-md);background:rgba(244,162,76,.16);color:var(--color-accent);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:var(--space-4)}
+.why__c h3{color:#fff;font-size:1.15rem;margin-bottom:8px}.why__c p{color:#C9DAD7;font-size:var(--fs-small)}
+.sv__wrap{overflow-x:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);border:1px solid var(--color-border)}
+.sv{width:100%;border-collapse:collapse;background:var(--color-surface);min-width:640px}
+.sv th{background:var(--color-primary-deep);color:#fff;text-align:left;padding:14px 18px;font-family:var(--font-heading);font-size:var(--fs-small)}
+.sv td{padding:13px 18px;border-top:1px solid var(--color-border);font-size:var(--fs-small);vertical-align:top}
+.sv tr:nth-child(even) td{background:#FCFAF6}
+.sv__y{color:var(--color-success-text);font-weight:700;font-family:var(--font-heading);font-variant-numeric:tabular-nums}
+.sv__n{color:var(--color-text-secondary);font-size:var(--fs-micro)}
+.sv__disc{margin-top:var(--space-4);font-size:var(--fs-micro);color:var(--color-text-secondary);text-align:center}
+.trust__top{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--space-7);align-items:center;margin-bottom:var(--space-7)}
+.trust__media{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
+.trust__media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)}
+.clinics{display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--space-4)}
+.clinic{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-pill);padding:7px 16px;font-family:var(--font-heading);font-weight:600;font-size:var(--fs-small);color:var(--color-primary-deep)}
+.tps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-4)}
+.tp{display:flex;gap:13px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4) var(--space-5);box-shadow:var(--shadow-sm)}
+.tp__i{color:var(--color-success);font-size:1.4rem;flex-shrink:0}
+.tp h4{font-size:1rem;margin-bottom:4px}.tp p{font-size:var(--fs-small);color:var(--color-text-secondary)}
+.tcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-4)}
+.tcard{background:var(--color-surface);border:1px solid var(--color-border);border-top:3px solid var(--color-accent-gold);border-radius:var(--radius-lg);padding:var(--space-6);box-shadow:var(--shadow-sm)}
+.tcard__q{font-size:var(--fs-body);color:var(--color-text);margin-bottom:var(--space-5);font-style:italic}
+.tcard__a{display:flex;align-items:center;gap:12px}
+.tcard__av{width:44px;height:44px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;font-size:1.1rem}
+.tcard__a b{display:block;font-size:var(--fs-small)}.tcard__a small{color:var(--color-text-secondary);font-size:var(--fs-micro)}
+.tst__note{text-align:center;margin-top:var(--space-5);font-size:var(--fs-micro);color:var(--color-text-secondary)}
+.faqs{max-width:820px;margin:0 auto;display:grid;gap:var(--space-3)}
+.faq__i{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden}
+.faq__i summary{list-style:none;cursor:pointer;padding:var(--space-4) var(--space-5);font-family:var(--font-heading);font-weight:600;color:var(--color-primary-deep);display:flex;justify-content:space-between;align-items:center;gap:var(--space-4)}
+.faq__i summary::-webkit-details-marker{display:none}
+.faq__x{color:var(--color-accent);font-size:1.5rem;transition:transform .25s}
+.faq__i[open] .faq__x{transform:rotate(45deg)}
+.faq__a{padding:0 var(--space-5) var(--space-5);font-size:var(--fs-small);color:var(--color-text-secondary)}
+.cta{background:var(--grad-hero-dark);color:#fff}
+.cta__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:center}
+.cta h2{color:#fff;font-size:var(--fs-h1);margin-bottom:var(--space-4)}
+.cta__text p{color:#D9C8AC;font-size:var(--fs-body-l);margin-bottom:var(--space-5)}
+.cta__form{background:var(--color-surface);border-radius:var(--radius-xl);padding:var(--space-7);box-shadow:var(--shadow-lg)}
+.fld{display:block;margin-bottom:var(--space-4)}
+.fld span{display:block;font-size:var(--fs-small);font-weight:600;color:var(--color-text);margin-bottom:6px}
+.req{color:var(--color-attention)}
+.fld input,.fld select{width:100%;padding:13px 15px;border:1px solid var(--color-border);border-radius:var(--radius-md);font-family:var(--font-body);font-size:1rem;background:#fff;color:var(--color-text);min-height:48px}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(30,95,116,.12)}
+.consent{display:flex;gap:9px;align-items:flex-start;font-size:var(--fs-micro);color:var(--color-text-secondary);margin:var(--space-3) 0 var(--space-4)}
+.consent input{margin-top:3px;width:18px;height:18px;flex-shrink:0}
+.cta__form .btn{width:100%;justify-content:center}
+.cta__disc{font-size:var(--fs-micro);color:var(--color-text-secondary);text-align:center;margin-top:var(--space-3)}
+.foot{background:#0A2029;color:#9FB6B4;padding:var(--space-8) 0 var(--space-6)}
+.foot__in{display:flex;justify-content:space-between;gap:var(--space-6);flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:var(--space-6);margin-bottom:var(--space-5)}
+.foot__brand{display:flex;align-items:center;gap:11px;color:#fff;font-family:var(--font-heading);font-weight:800;font-size:1.3rem}
+.foot__brand img{width:38px;height:38px;background:var(--color-bg);border-radius:8px;padding:3px}
+.foot p{font-size:var(--fs-small);max-width:520px;margin-top:var(--space-3)}
+.foot small{font-size:var(--fs-micro);opacity:.8;display:block;line-height:1.6}
+.fab{position:fixed;right:20px;bottom:20px;z-index:70;display:flex;align-items:center;gap:9px;background:var(--color-success);color:#fff;padding:13px 20px;border-radius:var(--radius-pill);box-shadow:var(--shadow-lg);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:.95rem}
+.fab svg{font-size:1.25rem}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease-soft),transform .6s var(--ease-soft)}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:820px){
+  .hdr__nav{display:none}
+  .trust__top,.cta__grid{grid-template-columns:1fr}
+  .hero__veil,.dest__veil{background:linear-gradient(180deg,rgba(15,46,61,.5),rgba(15,46,61,.85))}
+  .hero{min-height:auto;padding:var(--space-7) 0}
+  .hero__in{max-width:100%}
+  .hero__sub{font-size:var(--fs-body-l)}
+  .sec-h h2,.dest h2,.cta h2,.why .sec-h h2{font-size:clamp(1.6rem,5.6vw,2.2rem)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+</style></head><body>
+<a class="brand" href="#main" style="position:absolute;left:-9999px;top:0" onfocus="this.style.left='8px';this.style.top='8px';this.style.zIndex='200';this.style.background='#fff';this.style.padding='8px 14px';this.style.borderRadius='8px'">К содержимому</a>
+<header class="hdr" id="top"><div class="wrap hdr__in">
+  <a class="brand" href="#top"><img src="assets/lumena-logo-mark-a1.png" alt="" width="36" height="36"><b>Люмена</b></a>
+  <nav class="hdr__nav" aria-label="Основная навигация"><a href="##how">Как это работает</a><a href="##directions">Направления</a><a href="##savings">Цены и экономия</a><a href="##trust">Клиники</a><a href="##faq">Вопросы</a></nav>
+  <a class="btn btn--p hdr__cta" href="#cta">Бесплатный расчёт</a>
+</div></header>
+<main id="main">
+<section class="hero" style="padding:0" aria-label="Главный экран"><div class="hero__bg" role="img" aria-label="Человек смотрит на рассветный свет — надежда и спокойствие"></div><div class="hero__veil"></div>
+  <div class="wrap"><div class="hero__in">
+    <span class="eyebrow">Лечение в клиниках Армении — под ключ</span>
+    <h1>Лечение, которое не приходится откладывать из-за цены</h1>
+    <p class="hero__sub">«Люмена» помогает спокойно пройти лечение в проверенных клиниках Армении: подбираем клинику под ваш случай, заранее считаем понятную смету «под ключ», встречаем в Ереване и сопровождаем 24/7. Перелёт из Москвы — 2,5–3 часа, без виз и языкового барьера. Свет на пути к здоровью — и человек рядом до конца.</p>
+    <div class="hero__cta"><a class="btn btn--p" href="#cta">Получить бесплатный расчёт</a><a class="btn btn--g" href="#how">Спросить в Telegram / WhatsApp</a></div>
+    <div class="hero__badges"><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Ориентир экономии 30–60% к частной Москве</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Без виз — въезд по паспорту РФ</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Перелёт 2,5–3 часа</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Личный координатор 24/7</div></div>
+  </div></div>
+</section>
+<section id="problem"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Знакомо?</span><h2>Когда нужно лечение, а вокруг — одни вопросы</h2><p>Вы уже сравнили цены дома и понимаете: хорошее лечение стоит дорого, а откладывать тревожно. За границей вроде дешевле — но как понять, кому довериться, и не остаться один на один с чужой страной? Это нормальные опасения. Давайте по порядку.</p></div>
+  <div class="pains"><div class="pain reveal"><h3>Цена в частной клинике пугает</h3><p>Импланты, операция или серьёзный чек-ап в частной Москве легко превращаются в сумму, ради которой приходится ждать, копить или брать кредит. А со здоровьем тянуть не хочется.</p></div><div class="pain reveal"><h3>За границей страшно остаться одному</h3><p>Чужой город, незнакомые врачи, документы на другом языке. Кто объяснит, к кому идти, что подписывать и куда звонить, если возникнут вопросы?</p></div><div class="pain reveal"><h3>Непонятно, каким клиникам можно верить</h3><p>В интернете много заманчивых предложений и громких обещаний. Отличить достойную клинику от красивой картинки самому, издалека, почти невозможно.</p></div><div class="pain reveal"><h3>Боязнь скрытых доплат</h3><p>Назвали одну цену, а на месте набежали анестезия, стационар, расходники. В итоге «выгодно» оборачивается переплатой и неприятным сюрпризом.</p></div></div></div></section>
+<section id="how" class="how"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Как это работает</span><h2>Как мы сопровождаем вас от первого вопроса до дома</h2><p>С «Люменой» вам не нужно разбираться во всём в одиночку. Мы — ваш проводник: берём на себя организацию, а решения всегда остаются за вами и врачом. Вот как проходит путь.</p></div>
+  <div class="steps"><div class="step reveal"><img class="step__img" src="assets/lumena-coordinator.jpg" alt="Координатор на связи с пациентом" loading="lazy" decoding="async">
+      <div class="step__n">1</div><h3>1. Разбираемся в вашей ситуации</h3><p>Вы пишете нам в мессенджере или оставляете заявку. Координатор спокойно расспрашивает о задаче, при необходимости просит снимки или выписки и передаёт их в клиники — бесплатно и без обязательств.</p></div><div class="step reveal"><img class="step__img" src="assets/lumena-photo-clinic.jpg" alt="Светлый интерьер клиники в Ереване" loading="lazy" decoding="async">
+      <div class="step__n">2</div><h3>2. Подбираем клинику и считаем смету «под ключ»</h3><p>Показываем 1–2 подходящие клиники-партнёра, ориентир по плану лечения от врачей и прозрачную смету: лечение, перелёт, проживание, трансферы. Вы заранее видите, из чего складывается сумма.</p></div><div class="step reveal"><img class="step__img" src="assets/lumena-welcome.jpg" alt="Встреча пациента в Ереване" loading="lazy" decoding="async">
+      <div class="step__n">3</div><h3>3. Готовим поездку и встречаем в Ереване</h3><p>Записываем на удобные даты, помогаем с билетами и жильём, встречаем в аэропорту. На приёмах и в клинике рядом русскоязычный персонал и ваш координатор — на связи 24/7.</p></div><div class="step reveal"><img class="step__img" src="assets/lumena-photo-trust.jpg" alt="Забота и сопровождение после лечения" loading="lazy" decoding="async">
+      <div class="step__n">4</div><h3>4. Возвращаем домой и остаёмся на связи</h3><p>После процедуры провожаем домой и не пропадаем: помогаем держать контакт с клиникой по рекомендациям и контрольным вопросам. Лечение завершилось — а поддержка остаётся.</p></div></div></div></section>
+<section class="dest" aria-label="Армения как направление"><div class="dest__bg" role="img" aria-label="Ереван на рассвете с видом на гору Арарат"></div><div class="dest__veil"></div>
+  <div class="wrap dest__in"><h2>Ереван — 2,5–3 часа от Москвы</h2><p>Город, куда не страшно лететь за здоровьем: без виз, по-русски, с человеком рядом на каждом шаге.</p></div></section>
+<section id="directions"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Направления</span><h2>Направления, с которыми мы помогаем</h2><p>Мы работаем там, где Армения даёт настоящую пользу пациенту из России — по цене, доступу или сервису. По каждому направлению подберём клинику под ваш случай.</p></div>
+  <div class="dirs"><div class="dir dir--pop reveal"><span class="dir__pop">Хит</span><div class="dir__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3c-2.5-1.5-6 0-6 4 0 3 1 5 1.5 8.5C7.8 17 8 19 9 19s1.2-3 3-3 2 3 3 3 1.2-2 1.5-3.5C17 12 18 10 18 7c0-4-3.5-5.5-6-4z"/></svg></div>
+      <h3>Стоматология</h3><div class="dir__save">ориентир экономии ~35–55%</div><p>Импланты, виниры, коронки, протоколы All-on-4 / All-on-6. Импланты известных брендов по более доступной цене, в формате «всё включено» с проживанием.</p></div><div class="dir dir--pop reveal"><span class="dir__pop">Хит</span><div class="dir__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></div>
+      <h3>Пластическая хирургия</h3><div class="dir__save">ориентир экономии ~50–65% (ринопластика, абдоминопластика)</div><p>Ринопластика, пластика живота, век, контурные коррекции. В цену клиники обычно уже входят операционная, анестезия и стационар. Деликатно и приватно.</p></div><div class="dir reveal"><div class="dir__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21v-7"/><path d="M12 14c0-3 2-5 5-5 0 3-2 5-5 5z"/><path d="M12 13c0-3-2-5-5-5 0 3 2 5 5 5z"/></svg></div>
+      <h3>Чек-апы и диагностика</h3><div class="dir__save">ориентир экономии ~50–70%</div><p>Расширенное обследование за 1–2 дня: понять состояние здоровья, не теряя недели на очереди. Удобная точка старта, чтобы спокойно принять решение о лечении.</p></div><div class="dir reveal"><div class="dir__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20l8-8"/><path d="M13 11l6-6c1-1 2 0 1 1l-5 6z"/></svg></div>
+      <h3>Плановая и общая хирургия</h3><div class="dir__save">ориентир экономии ~50–70% по ряду операций</div><p>Лапароскопические и ортопедические вмешательства, эндопротезирование суставов «под ключ» с имплантом. Подбираем многопрофильную клинику под конкретный диагноз.</p></div><div class="dir reveal"><div class="dir__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M10 12v3a5 5 0 0 0 5 5 4 4 0 0 0 4-4v-2"/><circle cx="19" cy="13" r="1.6"/></svg></div>
+      <h3>Репродукция и ЭКО</h3><div class="dir__save">вопрос не цены, а доступа и деликатности</div><p>Помогаем с доступом к легальным для граждан России программам — суррогатному материнству и донорским программам, которые сегодня в РФ ограничены. Полная приватность и бережное сопровождение на каждом шаге.</p></div></div></div></section>
+<section id="why" class="why"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Почему Люмена</span><h2>Почему пациенты выбирают «Люмену»</h2></div>
+  <div class="why__grid"><div class="why__c reveal"><div class="why__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5.5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/><circle cx="17" cy="14" r="1.3" fill="currentColor" stroke="none"/></svg></div><h3>Честная цена — ориентир экономии 30–60% к частной Москве</h3><p>При сопоставимом уровне лечения вы видите итоговую смету «под ключ» заранее, без скрытых доплат на месте. За лечение платите напрямую клинике — наша координация для вас уже включена в пакет.</p></div><div class="why__c reveal"><div class="why__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2.5" width="14" height="19" rx="2"/><circle cx="12" cy="9.5" r="2.6"/><path d="M9 15.5h6"/></svg></div><h3>Без виз и языкового барьера</h3><p>Армения — страна ЕАЭС: въезд по внутреннему паспорту РФ, без виз и лишних бумаг. В клиниках-партнёрах работает русскоязычный персонал, а координатор всегда переведёт и объяснит.</p></div><div class="why__c reveal"><div class="why__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.5 13.5 3 15l-1-2 6.5-3.2L7 4l2-.5 3 5 5.5-1.2a1.6 1.6 0 0 1 .7 3.1L12 12l-1.5 7-1.8-.4z"/></svg></div><h3>Близко и быстро</h3><p>Перелёт из Москвы — всего 2,5–3 часа. Запись возможна за считаные дни, а вся поездка обычно занимает от 3 до 14 дней. Не нужно надолго выпадать из жизни и работы.</p></div><div class="why__c reveal"><div class="why__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.5-7-9.5A4 4 0 0 1 12 7a4 4 0 0 1 7 3.5C19 15.5 12 20 12 20z"/></svg></div><h3>Живой человек рядом 24/7</h3><p>У вас один личный координатор — не бот и не колл-центр. Он на связи от первого вопроса до возвращения домой и поддерживает контакт с клиникой после, когда нужны рекомендации или контрольный приём.</p></div></div></div></section>
+<section id="savings"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Сколько можно сэкономить</span><h2>Сколько можно сэкономить: ориентиры по ценам</h2><p>Это рыночные ориентиры из открытых прайс-листов, а не ваша персональная смета. Реальная цифра зависит от клиники, брендов материалов и сложности случая — её мы посчитаем для вас бесплатно. Курс пересчёта: 1 USD ≈ 85 ₽.</p></div>
+  <div class="sv__wrap"><table class="sv"><thead><tr><th>Процедура</th><th>Частная Москва</th><th>Ереван «под ключ»</th><th>Примечание</th></tr></thead><tbody><tr class="reveal"><td><b>Имплант + коронка (1 единица)</b></td><td>60–110 тыс ₽</td><td class="sv__y">от ~34–60 тыс ₽</td><td class="sv__n">Ориентир экономии 35–55%. Возможны импланты известных брендов по более доступной цене.</td></tr><tr class="reveal"><td><b>Винир E-max (1 единица)</b></td><td>28–85 тыс ₽</td><td class="sv__y">от ~21–30 тыс ₽</td><td class="sv__n">Ориентир экономии до ~50%, зависит от объёма работ.</td></tr><tr class="reveal"><td><b>Ринопластика (нос)</b></td><td>от ~480 тыс ₽</td><td class="sv__y">от ~170 тыс ₽</td><td class="sv__n">Ориентир экономии до ~60%; операционная и стационар обычно уже включены.</td></tr><tr class="reveal"><td><b>Абдоминопластика (живот)</b></td><td>от ~650 тыс ₽</td><td class="sv__y">от ~300 тыс ₽</td><td class="sv__n">Ориентир экономии ~50–55% в формате «всё включено».</td></tr><tr class="reveal"><td><b>Расширенный чек-ап</b></td><td>45–100 тыс ₽</td><td class="sv__y">от ~13–33 тыс ₽</td><td class="sv__n">Ориентир экономии 50–70%. Удобная точка старта за 1–2 дня.</td></tr><tr class="reveal"><td><b>Эндопротезирование сустава «под ключ»</b></td><td>от ~350–600 тыс ₽</td><td class="sv__y">от ~$4 500–5 500 (≈ 380–470 тыс ₽)</td><td class="sv__n">С имплантом «под ключ»; итог зависит от бренда протеза и клиники.</td></tr></tbody></table></div>
+  <p class="sv__disc">Цены приведены как диапазоны-ориентиры и не являются публичной офертой или гарантией стоимости лечения. Итоговая стоимость индивидуальна и зависит от вашего случая, выбранной клиники и материалов. Имеются противопоказания, необходима консультация специалиста.</p></div></section>
+<section id="trust"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Доверие</span><h2>С какими клиниками мы работаем и как их отбираем</h2><p>Мы не клиника и не турагентство, а ваш проводник. Сами лечение не проводим — наша работа в том, чтобы рядом с вами оказались достойные врачи и клиники. Мы работаем с ведущими клиниками Армении, среди которых:</p></div>
+  <div class="trust__top">
+    <div><h3 style="font-size:1.2rem;margin-bottom:10px;color:var(--color-primary-deep)">Работаем с ведущими клиниками Армении</h3><div class="clinics"><span class="clinic">Erebouni</span><span class="clinic">Nairi</span><span class="clinic">Astghik</span><span class="clinic">Nork Marash</span><span class="clinic">Mary Clinic</span><span class="clinic">White Castle</span></div></div>
+    <div class="trust__media"><img src="assets/lumena-photo-clinic.jpg" alt="Интерьер клиники-партнёра в Ереване" loading="lazy" decoding="async"><img src="assets/lumena-photo-trust.jpg" alt="Координатор поддерживает пациента" loading="lazy" decoding="async"></div>
+  </div>
+  <div class="tps"><div class="tp reveal"><span class="tp__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.6 2.6L16 9"/></svg></span><div><h4>Опыт и репутация</h4><p>Выбираем многопрофильные клиники и профильные центры с историей, современным оборудованием и понятной репутацией среди пациентов, в том числе из России.</p></div></div><div class="tp reveal"><span class="tp__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.6 2.6L16 9"/></svg></span><div><h4>Готовность к русскоязычным пациентам</h4><p>Отдаём предпочтение клиникам, где есть русскоязычный персонал и привычный формат общения — чтобы вы понимали врача, а врач понимал вас.</p></div></div><div class="tp reveal"><span class="tp__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.6 2.6L16 9"/></svg></span><div><h4>Прозрачность по ценам и плану</h4><p>Работаем с теми, кто открыто называет план лечения и из чего складывается смета. Никаких «всё посчитаем на месте» без предупреждения.</p></div></div><div class="tp reveal"><span class="tp__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.6 2.6L16 9"/></svg></span><div><h4>Прямой договор и оплата клинике</h4><p>За лечение вы платите напрямую клинике по её договору — деньги не проходят через нас. Это прозрачно и снижает ваши риски.</p></div></div></div></div></section>
+<section id="testimonials" style="background:var(--grad-dawn)"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Истории пациентов</span><h2>Что говорят люди, которые прошли этот путь</h2></div>
+  <div class="tcards"><div class="tcard reveal"><p class="tcard__q">«Главное, чего мы боялись, — остаться в чужом городе одни. Но координатор был на связи буквально в любой час: встретил, проводил в клинику, всё перевёл и объяснил. Смету показали заранее, и сюрпризов на месте не было — для нас это оказалось важнее всего.»</p>
+      <div class="tcard__a"><span class="tcard__av" aria-hidden="true">С</span><div><b>Сергей и Ольга</b><small>Москва · Импланты, All-on-4</small></div></div></div><div class="tcard reveal"><p class="tcard__q">«Хотелось, чтобы всё прошло спокойно и приватно, без лишних глаз и разговоров. В «Люмене» отнеслись очень бережно: подобрали клинику, помогли с поездкой, держали меня в курсе на каждом шаге. Я чувствовала, что я не одна.»</p>
+      <div class="tcard__a"><span class="tcard__av" aria-hidden="true">М</span><div><b>Марина</b><small>Санкт-Петербург · Эстетическая хирургия</small></div></div></div><div class="tcard reveal"><p class="tcard__q">«У меня армянские корни, давно хотел нормально обследоваться, но всё откладывал из-за времени. Здесь всё уложилось буквально в пару дней: записали быстро, по деньгам вышло заметно мягче, чем дома. Организация — без нервов.»</p>
+      <div class="tcard__a"><span class="tcard__av" aria-hidden="true">Д</span><div><b>Дмитрий</b><small>Краснодар · Расширенный чек-ап</small></div></div></div></div><p class="tst__note">Тексты ниже — собирательные примеры типичных ситуаций для демонстрации. Перед публикацией их необходимо заменить на реальные верифицированные отзывы с письменного согласия пациентов на использование. Отзывы описывают опыт организации и сопровождения и не являются обещанием результата лечения.</p></div></section>
+<section id="faq"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Вопросы и ответы</span><h2>Частые вопросы — честные ответы</h2></div>
+  <div class="faqs"><details class="faq__i reveal"><summary>А качество лечения там точно достойное?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>Мы работаем с многопрофильными клиниками и профильными центрами Армении — с современным оборудованием, опытными врачами и репутацией среди пациентов, в том числе из России. При этом мы не клиника и не даём обещаний по результату лечения: его определяют врач и ваш конкретный случай. Перед лечением обязательна очная консультация специалиста. Имеются противопоказания, необходима консультация специалиста.</p></div></details><details class="faq__i reveal"><summary>Кто отвечает, если в ходе лечения возникнут вопросы?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>За медицинскую часть отвечает клиника, с которой вы заключаете прямой договор, — как и в любой клинике дома. «Люмена» отвечает за организацию: подбор, координацию, сопровождение и связь с клиникой. Если возникает вопрос, ваш координатор помогает быстро выйти на врача и разобраться в ситуации.</p></div></details><details class="faq__i reveal"><summary>Это вообще не развод? Как понять, что вам можно доверять?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>Понимаем такое опасение — поэтому строим всё на прозрачности. За лечение вы платите напрямую клинике по её договору, деньги не проходят через нас. Смету «под ключ» вы видите заранее, до поездки. Расчёт и подбор клиники бесплатны и ни к чему вас не обязывают — можно спокойно всё взвесить и решить.</p></div></details><details class="faq__i reveal"><summary>Сколько в итоге я заплачу и нет ли скрытых доплат?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>Мы заранее показываем смету «под ключ»: лечение, перелёт, проживание, трансферы. Цены на сайте — это диапазоны-ориентиры, а не ваша персональная смета. Итоговая стоимость индивидуальна и зависит от клиники, материалов и сложности случая — её мы рассчитаем для вас бесплатно перед поездкой, чтобы сюрпризов на месте не было.</p></div></details><details class="faq__i reveal"><summary>Насколько это безопасно — ехать лечиться в другую страну?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>Армения — страна ЕАЭС: въезд по внутреннему паспорту РФ, без виз. Перелёт из Москвы — 2,5–3 часа, в клиниках есть русскоязычный персонал, а ваш координатор на связи 24/7 на всём пути. Вся поездка обычно занимает от 3 до 14 дней. Решение о возможности лечения принимает врач после очной консультации.</p></div></details><details class="faq__i reveal"><summary>Я по поводу ЭКО и репродукции — это конфиденциально?<span class="faq__x" aria-hidden="true">+</span></summary><div class="faq__a"><p>Да, полная приватность — наш приоритет. Мы деликатно помогаем с доступом к легальным для граждан России программам, включая суррогатное материнство и донорские программы, которые сегодня в РФ ограничены. Общение ведём бережно и только по тем каналам, которые удобны вам. Все медицинские вопросы решаются с профильными специалистами клиники.</p></div></details></div></div></section>
+<section id="cta" class="cta"><div class="wrap"><div class="cta__grid">
+  <div class="cta__text"><h2>Сделайте первый спокойный шаг</h2><p>Расскажите о своей ситуации — мы бесплатно подберём подходящую клинику и посчитаем смету «под ключ» за 1 день. Это ни к чему вас не обязывает: вы просто получите ясную картину и сможете спокойно решить. Свет на пути к здоровью — и человек рядом до конца.</p><div class="hero__badges"><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Ориентир экономии 30–60% к частной Москве</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Без виз — въезд по паспорту РФ</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Перелёт 2,5–3 часа</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Личный координатор 24/7</div></div></div>
+  <form class="cta__form" onsubmit="return false" aria-label="Заявка на бесплатный расчёт">
+    <label class="fld"><span>Как к вам обращаться <span class="req" aria-hidden="true">*</span></span><input type="text" autocomplete="name" required></label><label class="fld"><span>Телефон или мессенджер (Telegram / WhatsApp) <span class="req" aria-hidden="true">*</span></span><input type="tel" inputmode="tel" autocomplete="tel" required placeholder="+7 ___ ___-__-__"></label><label class="fld"><span>Какое направление интересует</span><select autocomplete="off"><option>Стоматология</option><option>Пластическая хирургия</option><option>ЭКО / репродукция</option><option>Хирургия</option><option>Чек-ап</option><option>Не определился(ась)</option></select></label><label class="fld"><span>Коротко о вашей задаче (по желанию)</span><input type="text"></label><label class="fld"><span>Согласие на обработку персональных данных</span><input type="text"></label>
+    <label class="consent"><input type="checkbox" checked required> <span>Имеются противопоказания, необходима консультация специалиста. «Люмена» оказывает организационные и информационные услуги и не осуществляет медицинскую деятельность; решение о лечении принимает врач после очной консультации. Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности и даёте согласие на обработку персональных данных в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</span></label>
+    <button class="btn btn--d" type="submit">Получить бесплатный расчёт</button>
+    <p class="cta__disc">Имеются противопоказания, необходима консультация специалиста.</p>
+  </form>
+</div></div></section>
+</main>
+<footer class="foot"><div class="wrap">
+  <div class="foot__in">
+    <div><div class="foot__brand"><img src="assets/lumena-logo-mark-a1.png" alt="" width="38" height="38">Люмена · Lumena</div><p>«Люмена» (Lumena) — проводник в мире лечения в Армении. Компания-фасилитатор медицинского туризма, зарегистрирована в Республике Армения.</p></div>
+    <div style="max-width:480px"><small>«Люмена» не является медицинской организацией, клиникой или турагентством и не оказывает медицинских услуг. Компания предоставляет организационные, информационные и координационные услуги. Медицинские услуги оказывают клиники-партнёры на основании прямого договора с пациентом. Названия клиник приведены в информационных целях. Цены на сайте — ориентировочные диапазоны, не являются публичной офертой; итоговая стоимость индивидуальна.</small></div>
+  </div>
+  <small>Имеются противопоказания, необходима консультация специалиста. © 2026 Lumena. Все права защищены. Обработка персональных данных — согласно Федеральному закону № 152-ФЗ «О персональных данных».</small>
+</div></footer>
+<a class="fab" href="#cta" aria-label="Написать координатору"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16v11H9l-4 3v-3H4z"/><path d="M9 10.5h6"/></svg> Написать координатору</a>
+<script>
+var hdr=document.querySelector('.hdr');
+addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>10)});
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!rm){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(function(x){io.observe(x)});}
+</script>
+</body></html>
