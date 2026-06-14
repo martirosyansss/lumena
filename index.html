@@ -297,6 +297,24 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .accr__abbr{font-family:var(--font-heading);font-weight:800;font-size:1.2rem;color:var(--color-primary);letter-spacing:.02em}
 .accr__cap{font-size:var(--fs-micro);color:var(--color-text-secondary)}
 @media(max-width:820px){.accr{grid-template-columns:1fr;gap:var(--space-5)}}
+/* блок «как подбираем врача» */
+.docsel__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--space-7);align-items:center}
+.docsel__media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);display:block}
+.docsel__info h3{font-size:1.3rem;color:var(--color-primary-deep);margin-bottom:var(--space-4)}
+.docsel__note{margin-top:var(--space-4);font-size:var(--fs-small);color:var(--color-text-secondary)}
+/* чек-листы */
+.checks{list-style:none;display:grid;gap:11px}
+.checks li{position:relative;padding-left:32px;font-size:var(--fs-body);color:var(--color-text)}
+.checks li::before{content:"✓";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:#E9F3EE;color:var(--color-success-text);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.checks--n li::before{content:"i";background:var(--color-accent-soft);color:var(--color-attention)}
+/* что входит в стоимость */
+.incl__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5)}
+.incl__col{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6);box-shadow:var(--shadow-sm)}
+.incl__col--in{border-color:#CDE7DA;background:linear-gradient(180deg,#F3FAF6,var(--color-surface) 60%)}
+.incl__col h3{font-size:1.15rem;margin-bottom:var(--space-4);display:flex;align-items:center;gap:10px;color:var(--color-primary-deep)}
+.incl__ic{width:28px;height:28px;border-radius:50%;background:var(--color-accent-soft);color:var(--color-attention);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+.incl__ic--ok{background:#E9F3EE;color:var(--color-success-text)}
+@media(max-width:820px){.docsel__grid,.incl__grid{grid-template-columns:1fr}}
 </style></head><body>
 <a class="brand" href="#main" style="position:absolute;left:-9999px;top:0" onfocus="this.style.left='8px';this.style.top='8px';this.style.zIndex='200';this.style.background='#fff';this.style.padding='8px 14px';this.style.borderRadius='8px'">К содержимому</a>
 <header class="hdr" id="top"><div class="wrap hdr__in">
@@ -355,6 +373,31 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
     </div>
   </div>
 </div></section>
+<section class="incl"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Прозрачно</span><h2>Что входит в стоимость «под ключ»</h2><p>Полную смету вы видите заранее — без сюрпризов на месте. Вот что мы берём на себя и что входит в расчёт.</p></div>
+  <div class="incl__grid">
+    <div class="incl__col incl__col--in reveal">
+      <h3><span class="incl__ic incl__ic--ok">✓</span> Входит в пакет</h3>
+      <ul class="checks">
+        <li>Подбор клиники и профильного врача под ваш случай</li>
+        <li>Прозрачная смета и план лечения до поездки</li>
+        <li>Помощь с авиабилетами и проживанием в Ереване</li>
+        <li>Встреча в аэропорту и трансферы клиника ↔ жильё</li>
+        <li>Личный координатор и переводчик на связи 24/7</li>
+        <li>Сопровождение на приёмах и поддержка после возвращения</li>
+      </ul>
+    </div>
+    <div class="incl__col reveal">
+      <h3><span class="incl__ic">i</span> Важно знать заранее</h3>
+      <ul class="checks checks--n">
+        <li>Лечение вы оплачиваете напрямую клинике по её договору</li>
+        <li>Виза не нужна — въезд в Армению по паспорту РФ</li>
+        <li>Дополнительные процедуры по назначению врача — по факту и с вашего согласия</li>
+        <li>Личные расходы (питание, досуг) — по желанию</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
 <section id="savings"><div class="wrap">
   <div class="sec-h"><span class="eyebrow">Сколько можно сэкономить</span><h2>Сколько можно сэкономить: ориентиры по ценам</h2><p>Это рыночные ориентиры из открытых прайс-листов, а не ваша персональная смета. Реальная цифра зависит от клиники, брендов материалов и сложности случая — её мы посчитаем для вас бесплатно. Курс пересчёта: 1 USD ≈ 85 ₽.</p></div>
   <div class="sv__wrap"><table class="sv"><thead><tr><th>Процедура</th><th>Частная Москва</th><th>Ереван «под ключ»</th><th>Примечание</th></tr></thead><tbody><tr class="reveal"><td><b>Имплант + коронка (1 единица)</b></td><td>60–110 тыс ₽</td><td class="sv__y">от ~34–60 тыс ₽</td><td class="sv__n">Ориентир экономии 35–55%. Возможны импланты известных брендов по более доступной цене.</td></tr><tr class="reveal"><td><b>Винир E-max (1 единица)</b></td><td>28–85 тыс ₽</td><td class="sv__y">от ~21–30 тыс ₽</td><td class="sv__n">Ориентир экономии до ~50%, зависит от объёма работ.</td></tr><tr class="reveal"><td><b>Ринопластика (нос)</b></td><td>от ~480 тыс ₽</td><td class="sv__y">от ~170 тыс ₽</td><td class="sv__n">Ориентир экономии до ~60%; операционная и стационар обычно уже включены.</td></tr><tr class="reveal"><td><b>Абдоминопластика (живот)</b></td><td>от ~650 тыс ₽</td><td class="sv__y">от ~300 тыс ₽</td><td class="sv__n">Ориентир экономии ~50–55% в формате «всё включено».</td></tr><tr class="reveal"><td><b>Расширенный чек-ап</b></td><td>45–100 тыс ₽</td><td class="sv__y">от ~13–33 тыс ₽</td><td class="sv__n">Ориентир экономии 50–70%. Удобная точка старта за 1–2 дня.</td></tr><tr class="reveal"><td><b>Эндопротезирование сустава «под ключ»</b></td><td>от ~350–600 тыс ₽</td><td class="sv__y">от ~$4 500–5 500 (≈ 380–470 тыс ₽)</td><td class="sv__n">С имплантом «под ключ»; итог зависит от бренда протеза и клиники.</td></tr></tbody></table></div>
@@ -385,14 +428,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
     </div>
   </div>
 </div></section>
-<section id="doctors"><div class="wrap">
-  <div class="sec-h"><span class="eyebrow">Врачи</span><h2>Врачи, к которым вы попадёте</h2><p>Мы подбираем не «клинику вообще», а конкретного профильного врача под вашу задачу — с профильным образованием, опытом и практикой именно в вашем случае. Так выглядит карточка специалиста.</p></div>
-  <div class="docs">
-    <div class="doc reveal"><div class="doc__av">И</div><h4>Имя Фамилия</h4><div class="doc__spec">Хирург-имплантолог</div><div class="doc__meta"><span><b>15+</b>лет опыта</span><span><b>2000+</b>имплантаций</span></div><p class="doc__cred">Профильная ординатура · сертификаты по имплантологии · член профессиональной ассоциации</p></div>
-    <div class="doc reveal"><div class="doc__av">И</div><h4>Имя Фамилия</h4><div class="doc__spec">Пластический хирург</div><div class="doc__meta"><span><b>18+</b>лет опыта</span><span><b>1500+</b>операций</span></div><p class="doc__cred">Специализация по эстетической хирургии · стажировки за рубежом · действующая лицензия</p></div>
-    <div class="doc reveal"><div class="doc__av">И</div><h4>Имя Фамилия</h4><div class="doc__spec">Врач-диагност</div><div class="doc__meta"><span><b>12+</b>лет опыта</span><span><b>10 000+</b>обследований</span></div><p class="doc__cred">Терапия и функциональная диагностика · современные протоколы чек-апа · опыт с пациентами из РФ</p></div>
+<section id="doctors" class="docsel"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Врачи</span><h2>Лечат профильные врачи — и вы узнаёте своего ещё до поездки</h2><p>Мы не отправляем «к кому получится». Под ваш случай подбираем конкретного специалиста клиники и заранее присылаем его данные — чтобы вы спокойно приняли решение, зная, кто будет вас лечить.</p></div>
+  <div class="docsel__grid reveal">
+    <div class="docsel__media"><img src="assets/lumena-photo-clinic.jpg" alt="Приём у врача в клинике-партнёре в Ереване" loading="lazy" decoding="async"></div>
+    <div class="docsel__info">
+      <h3>Что мы проверяем и присылаем вам о враче</h3>
+      <ul class="checks">
+        <li>Имя, специализацию и профиль — точно под вашу задачу</li>
+        <li>Опыт и стаж, профильное образование и сертификаты</li>
+        <li>Репутацию и отзывы пациентов, в том числе из России</li>
+        <li>Предварительный план лечения и ориентир по срокам — до вылета</li>
+      </ul>
+      <p class="docsel__note">Лечение проводит клиника по прямому договору с вами; «Люмена» отвечает за подбор и сопровождение.</p>
+    </div>
   </div>
-  <p class="tst__note">Карточки врачей приведены как пример оформления. Перед публикацией их заменят реальные специалисты клиник-партнёров с проверенными регалиями и согласием на размещение.</p>
 </div></section>
 <section id="testimonials" style="background:var(--grad-dawn)"><div class="wrap">
   <div class="sec-h"><span class="eyebrow">Истории пациентов</span><h2>Что говорят люди, которые прошли этот путь</h2></div>
