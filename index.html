@@ -213,7 +213,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .foot small{font-size:var(--fs-micro);opacity:.8;display:block;line-height:1.6}
 .fab{position:fixed;right:20px;bottom:20px;z-index:70;display:flex;align-items:center;gap:9px;background:var(--color-success);color:#fff;padding:13px 20px;border-radius:var(--radius-pill);box-shadow:var(--shadow-lg);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:.95rem}
 .fab svg{font-size:1.25rem}
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease-soft),transform .6s var(--ease-soft)}
+.reveal{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .6s var(--ease-soft),transform .6s var(--ease-soft);will-change:opacity,transform}
 .reveal.in{opacity:1;transform:none}
 @media(max-width:820px){
   .hdr__nav{display:none}
@@ -229,6 +229,33 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   .reveal{opacity:1;transform:none;transition:none}
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
 }
+/* ============ Спецэффекты («ярко и заметно») ============ */
+/* прогресс-бар прокрутки */
+.fx-bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;background:linear-gradient(90deg,var(--color-accent),var(--color-accent-gold));box-shadow:0 0 12px rgba(244,162,76,.6)}
+/* свечение за курсором */
+.cursor-glow{position:fixed;left:0;top:0;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:55;background:radial-gradient(circle,rgba(244,162,76,.16),rgba(244,162,76,0) 62%);mix-blend-mode:screen;opacity:0;transition:opacity .5s;will-change:transform}
+/* hero: медленный ken-burns фона */
+.hero__bg{will-change:transform;animation:kenburns 26s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1.05)}to{transform:scale(1.16) translate3d(-2%,-2%,0)}}
+/* hero: световые орбы и луч */
+.hero__fx{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.hero__fx .orb{position:absolute;border-radius:50%;filter:blur(46px);mix-blend-mode:screen;background:radial-gradient(circle,rgba(244,162,76,.5),rgba(244,162,76,0) 70%);animation:floaty 16s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.32}50%{transform:translate3d(2vw,-3vh,0) scale(1.25);opacity:.66}}
+.hero__ray{position:absolute;top:-40%;left:24%;width:54%;height:180%;transform:rotate(8deg);filter:blur(7px);background:linear-gradient(100deg,transparent 0,rgba(244,162,76,.10) 46%,rgba(255,255,255,.18) 50%,rgba(244,162,76,.10) 54%,transparent 100%);animation:raysweep 9s ease-in-out infinite}
+@keyframes raysweep{0%,100%{transform:translateX(-32%) rotate(8deg);opacity:0}50%{transform:translateX(30%) rotate(8deg);opacity:.9}}
+/* параллакс-слой Еревана */
+.dest__bg{will-change:transform}
+/* 3D-наклон карточек */
+.fx-tilt{transition:transform .3s var(--ease-soft),box-shadow .3s}
+.fx-tilt.is-tilting{transition:transform .09s linear,box-shadow .3s;box-shadow:var(--shadow-lg)}
+/* кнопка: блик + пульс свечения */
+.btn--p{position:relative;overflow:hidden;animation:glowpulse 3.6s ease-in-out infinite}
+.btn--p::after{content:"";position:absolute;top:0;bottom:0;left:0;width:100%;pointer-events:none;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.5) 50%,transparent 62%);transform:translateX(-130%);animation:shine 5s ease-in-out infinite}
+@keyframes shine{0%,58%{transform:translateX(-130%)}80%,100%{transform:translateX(130%)}}
+@keyframes glowpulse{0%,100%{box-shadow:0 8px 24px rgba(244,162,76,.28)}50%{box-shadow:0 0 26px rgba(244,162,76,.5),0 10px 44px rgba(244,162,76,.3)}}
+/* плавающая кнопка: лёгкий пульс */
+.fab{animation:fabpulse 3s ease-in-out infinite}
+@keyframes fabpulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 </style></head><body>
 <a class="brand" href="#main" style="position:absolute;left:-9999px;top:0" onfocus="this.style.left='8px';this.style.top='8px';this.style.zIndex='200';this.style.background='#fff';this.style.padding='8px 14px';this.style.borderRadius='8px'">К содержимому</a>
 <header class="hdr" id="top"><div class="wrap hdr__in">
@@ -313,5 +340,39 @@ addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>10)
 var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!rm){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(function(x){io.observe(x)});}
+
+/* ===== Спецэффекты ===== */
+if(!rm){(function(){
+  // прогресс-бар
+  var bar=document.createElement('div');bar.className='fx-bar';document.body.appendChild(bar);
+  // свечение за курсором
+  var glow=document.createElement('div');glow.className='cursor-glow';document.body.appendChild(glow);
+  var gx=innerWidth/2,gy=innerHeight/2,cx=gx,cy=gy,shown=false;
+  addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;gx=e.clientX;gy=e.clientY;if(!shown){shown=true;glow.style.opacity='1'}},{passive:true});
+  // hero: орбы + луч
+  var hero=document.querySelector('.hero');
+  if(hero){var fx=document.createElement('div');fx.className='hero__fx';
+    [[150,'10%','58%','0s'],[210,'72%','18%','-4s'],[120,'46%','80%','-8s'],[170,'88%','62%','-2s']].forEach(function(c){
+      var o=document.createElement('div');o.className='orb';o.style.width=o.style.height=c[0]+'px';o.style.left=c[1];o.style.top=c[2];o.style.animationDelay=c[3];fx.appendChild(o)});
+    var ray=document.createElement('div');ray.className='hero__ray';fx.appendChild(ray);hero.appendChild(fx);}
+  // 3D-наклон карточек
+  document.querySelectorAll('.dir,.step,.why__c,.tp,.tcard,.pain').forEach(function(c){
+    c.classList.add('fx-tilt');
+    c.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;var r=c.getBoundingClientRect();var px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.classList.add('is-tilting');c.style.transform='perspective(900px) rotateX('+(-py*6).toFixed(2)+'deg) rotateY('+(px*7).toFixed(2)+'deg) translateY(-4px)'});
+    c.addEventListener('pointerleave',function(){c.classList.remove('is-tilting');c.style.transform=''});
+  });
+  // стаггер появлений (по соседям внутри одного контейнера)
+  var seen=new Map();
+  document.querySelectorAll('.reveal').forEach(function(el){var p=el.parentNode,i=seen.get(p)||0;el.style.transitionDelay=(i*90)+'ms';seen.set(p,i+1)});
+  // rAF: прогресс, инерция свечения, параллакс Еревана
+  var dest=document.querySelector('.dest__bg'),de=document.documentElement;
+  function loop(){
+    var max=de.scrollHeight-de.clientHeight;bar.style.width=(max>0?(de.scrollTop||document.body.scrollTop)/max*100:0)+'%';
+    cx+=(gx-cx)*.18;cy+=(gy-cy)*.18;glow.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0) translate(-50%,-50%)';
+    if(dest){var r=dest.parentNode.getBoundingClientRect();dest.style.transform='scale(1.22) translateY('+((r.top+r.height/2-innerHeight/2)*-0.06).toFixed(1)+'px)'}
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();}
 </script>
 </body></html>
