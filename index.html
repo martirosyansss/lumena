@@ -311,6 +311,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   .freecard{flex-direction:column;text-align:center;padding:var(--space-5)}
   .stat + .stat::before{display:none}
 }
+/* аккредитации и стандарты */
+.accr-band{padding:var(--space-7) 0;background:var(--color-surface);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border)}
+.accr{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--space-7);align-items:center}
+.accr__t h3{font-size:1.4rem;color:var(--color-primary-deep);margin-bottom:8px}
+.accr__t p{font-size:var(--fs-small);color:var(--color-text-secondary)}
+.accr__t p b{color:var(--color-primary)}
+.accr__badges{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.accr__b{display:flex;flex-direction:column;gap:3px;padding:14px 18px;border:1px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-bg);min-width:148px;box-shadow:var(--shadow-sm)}
+.accr__abbr{font-family:var(--font-heading);font-weight:800;font-size:1.2rem;color:var(--color-primary);letter-spacing:.02em}
+.accr__cap{font-size:var(--fs-micro);color:var(--color-text-secondary)}
+@media(max-width:820px){.accr{grid-template-columns:1fr;gap:var(--space-5)}}
 </style></head><body>
 <a class="brand" href="#main" style="position:absolute;left:-9999px;top:0" onfocus="this.style.left='8px';this.style.top='8px';this.style.zIndex='200';this.style.background='#fff';this.style.padding='8px 14px';this.style.borderRadius='8px'">К содержимому</a>
 <header class="hdr" id="top"><div class="wrap hdr__in">
@@ -389,6 +400,16 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   </div>
   <p class="cl-note">Профили клиник указаны по открытым данным; финальную клинику под ваш случай подбираем индивидуально. «Люмена» не является медицинской организацией.</p>
   <div class="tps"><div class="tp reveal"><span class="tp__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.6 2.6L16 9"/></svg></span><div><h4>Опыт и репутация</h4><p>Выбираем многопрофильные клиники и профильные центры с историей, современным оборудованием и понятной репутацией среди пациентов, в том числе из России.</p></div></div><div class="tp reveal"><span class="tp__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.6 2.6L16 9"/></svg></span><div><h4>Готовность к русскоязычным пациентам</h4><p>Отдаём предпочтение клиникам, где есть русскоязычный персонал и привычный формат общения — чтобы вы понимали врача, а врач понимал вас.</p></div></div><div class="tp reveal"><span class="tp__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.6 2.6L16 9"/></svg></span><div><h4>Прозрачность по ценам и плану</h4><p>Работаем с теми, кто открыто называет план лечения и из чего складывается смета. Никаких «всё посчитаем на месте» без предупреждения.</p></div></div><div class="tp reveal"><span class="tp__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.6 2.6L16 9"/></svg></span><div><h4>Прямой договор и оплата клинике</h4><p>За лечение вы платите напрямую клинике по её договору — деньги не проходят через нас. Это прозрачно и снижает ваши риски.</p></div></div></div></div></section>
+<section class="accr-band" aria-label="Аккредитации и стандарты"><div class="wrap">
+  <div class="accr reveal">
+    <div class="accr__t"><h3>Международные стандарты и лицензии</h3><p>Мы отдаём приоритет клиникам, которые подтверждают качество независимыми аккредитациями. Среди партнёров — центр с международной аккредитацией <b>JCI</b> и клиники, сертифицированные по <b>ISO 9001</b>. Все клиники работают по лицензии Министерства здравоохранения Республики Армения.</p></div>
+    <div class="accr__badges">
+      <div class="accr__b"><span class="accr__abbr">JCI</span><span class="accr__cap">Joint Commission International</span></div>
+      <div class="accr__b"><span class="accr__abbr">ISO 9001</span><span class="accr__cap">Менеджмент качества</span></div>
+      <div class="accr__b"><span class="accr__abbr">Минздрав РА</span><span class="accr__cap">Лицензия Республики Армения</span></div>
+    </div>
+  </div>
+</div></section>
 <section id="doctors"><div class="wrap">
   <div class="sec-h"><span class="eyebrow">Врачи</span><h2>Врачи, к которым вы попадёте</h2><p>Мы подбираем не «клинику вообще», а конкретного профильного врача под вашу задачу — с профильным образованием, опытом и практикой именно в вашем случае. Так выглядит карточка специалиста.</p></div>
   <div class="docs">
