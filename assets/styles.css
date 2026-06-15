@@ -119,7 +119,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 }
 @media(max-width:600px){.hdr__cta{display:none}}
 .hero{position:relative;min-height:84vh;display:flex;align-items:center;background:linear-gradient(180deg,#EFF8FF,#fff);overflow:hidden}
-.hero__bg{position:absolute;top:0;right:0;bottom:0;width:52%;background:url('lumena-consult.jpg') center/cover}
+.hero__bg{position:absolute;top:0;right:0;bottom:0;width:52%;background:url('lumena-patient.jpg') center center/cover}
 .hero__veil{position:absolute;inset:0;background:linear-gradient(90deg,#EFF8FF 42%,rgba(239,248,255,0) 66%)}
 .hero__in{position:relative;z-index:2;max-width:600px;text-align:left;color:var(--color-text);padding:var(--space-9) 0}
 .hero .eyebrow{color:var(--color-primary)}
@@ -215,7 +215,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .foot__brand img{width:38px;height:38px;background:var(--color-bg);border-radius:8px;padding:3px}
 .foot p{font-size:var(--fs-small);max-width:520px;margin-top:var(--space-3)}
 .foot small{font-size:var(--fs-micro);opacity:.8;display:block;line-height:1.6}
-.fab{position:fixed;right:20px;bottom:20px;z-index:70;display:flex;align-items:center;gap:9px;background:var(--color-success);color:#fff;padding:13px 20px;border-radius:var(--radius-pill);box-shadow:var(--shadow-lg);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:.95rem}
+.fab{position:fixed;right:20px;bottom:20px;z-index:70;display:flex;align-items:center;gap:9px;background:var(--color-success);color:#fff;padding:13px 20px;border-radius:var(--radius-pill);box-shadow:var(--shadow-lg);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:.95rem;opacity:0;visibility:hidden;transform:translateY(12px);pointer-events:none;transition:opacity .3s var(--ease-soft),transform .3s var(--ease-soft),visibility .3s}
+.fab.show{opacity:1;visibility:visible;transform:none;pointer-events:auto}
 .fab svg{font-size:1.25rem}
 .reveal{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .6s var(--ease-soft),transform .6s var(--ease-soft);will-change:opacity,transform}
 .reveal.in{opacity:1;transform:none}

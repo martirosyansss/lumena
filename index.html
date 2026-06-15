@@ -28,7 +28,7 @@
   <div class="wrap"><div class="hero__in">
     <span class="eyebrow">Лечение в клиниках Армении — под ключ</span>
     <h1>Лечение, которое не приходится откладывать из-за цены</h1>
-    <p class="hero__sub">«Люмена» помогает спокойно пройти лечение в проверенных клиниках Армении: подбираем клинику под ваш случай, заранее считаем понятную смету «под ключ», встречаем в Ереване и сопровождаем 24/7. Перелёт из Москвы — 2,5–3 часа, без виз и языкового барьера, с русскоязычным персоналом в клиниках.</p>
+    <p class="hero__sub">Подбираем клинику под ваш случай, заранее считаем смету «под ключ» и сопровождаем 24/7. Без виз, перелёт из Москвы — 2,5–3 часа.</p>
     <div class="hero__cta"><a class="btn btn--p" href="#calc">Рассчитать смету за 1 минуту</a><a class="btn btn--g" data-tg href="https://t.me/REPLACE_TELEGRAM" target="_blank" rel="noopener">Спросить в Telegram</a></div>
     <div class="hero__badges"><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Ориентир экономии 30–60% к частной Москве</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Без виз — въезд по паспорту РФ</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Перелёт 2,5–3 часа</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Личный координатор 24/7</div></div>
   </div></div>
@@ -127,8 +127,8 @@
 </div></footer>
 <a class="fab" data-tg href="https://t.me/REPLACE_TELEGRAM" target="_blank" rel="noopener" aria-label="Написать координатору в Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16v11H9l-4 3v-3H4z"/><path d="M9 10.5h6"/></svg> Написать координатору</a>
 <script>
-var hdr=document.querySelector('.hdr');
-addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>10)});
+var hdr=document.querySelector('.hdr'),fab=document.querySelector('.fab');
+addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>10);if(fab)fab.classList.toggle('show',scrollY>480)});
 (function(){var b=document.querySelector('.hdr__burger'),n=document.getElementById('navmenu');if(!b||!n)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
 n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();
