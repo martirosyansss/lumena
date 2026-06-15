@@ -1,0 +1,5 @@
+# ⚠️ ЗАМЕНИТЬ домен на реальный (Sitemap и canonical в HTML тоже).
+User-agent: *
+Allow: /
+
+Sitemap: https://lumena.example/sitemap.xml
