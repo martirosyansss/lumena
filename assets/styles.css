@@ -119,9 +119,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 }
 @media(max-width:600px){.hdr__cta{display:none}}
 .hero{position:relative;min-height:84vh;display:flex;align-items:center;background:linear-gradient(180deg,#EFF8FF,#fff);overflow:hidden}
-.hero__bg{position:absolute;top:0;right:0;bottom:0;width:52%;background:url('lumena-consult.jpg') center center/cover}
-.hero__veil{position:absolute;inset:0;background:linear-gradient(90deg,#EFF8FF 42%,rgba(239,248,255,0) 66%)}
-.hero__in{position:relative;z-index:2;max-width:600px;text-align:left;color:var(--color-text);padding:var(--space-9) 0}
+.hero__bg{position:absolute;top:0;right:0;bottom:0;width:50%;background:url('lumena-consult.jpg') 62% center/cover}
+.hero__veil{position:absolute;inset:0;background:linear-gradient(90deg,#EFF8FF 0%,#EFF8FF 50%,rgba(239,248,255,.5) 60%,rgba(239,248,255,0) 76%)}
+.hero .wrap{width:100%}
+.hero__in{position:relative;z-index:2;max-width:540px;text-align:left;color:var(--color-text);padding:var(--space-9) 0}
 .hero .eyebrow{color:var(--color-primary)}
 .hero h1{font-size:clamp(1.9rem,5.4vw,3.5rem);font-weight:800;color:var(--color-text);margin-bottom:var(--space-4);line-height:1.1;overflow-wrap:break-word}
 .hero__sub{font-size:var(--fs-h4);color:var(--color-text-secondary);font-weight:400;margin:0 0 var(--space-6);max-width:560px}
