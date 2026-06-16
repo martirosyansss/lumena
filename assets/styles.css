@@ -261,17 +261,18 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .freecard p b{color:var(--color-text)}
 /* карточки клиник */
 .cl-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--space-4)}
-.cl{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
-.cl__top{height:80px;background:var(--grad-mark);display:flex;align-items:center;justify-content:center}
-.cl__mono{font-family:var(--font-heading);font-weight:800;font-size:2rem;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.25)}
-.cl__b{padding:var(--space-4) var(--space-5)}
-.cl__b h4{font-size:1.05rem;margin-bottom:3px;color:var(--color-primary-deep)}
-.cl__city{font-size:var(--fs-micro);color:var(--color-text-secondary);display:flex;align-items:center;gap:5px;margin-bottom:10px}
-.cl__tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.cl__tag{font-size:var(--fs-micro);background:var(--color-accent-soft);color:var(--color-primary-deep);padding:3px 10px;border-radius:var(--radius-pill);font-weight:600}
-.cl__tag--acc{background:transparent;border:1px solid var(--color-accent-gold);color:var(--color-primary);font-weight:700}
-.cl__chk{display:flex;align-items:center;gap:6px;font-size:var(--fs-micro);color:var(--color-success-text);font-weight:600}
-.cl__chk svg{color:var(--color-success);font-size:1.1rem;flex-shrink:0}
+.cl{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;padding:var(--space-5);transition:transform .25s var(--ease-soft),box-shadow .25s,border-color .25s}
+.cl:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#CFE4F5}
+.cl__head{display:flex;align-items:center;gap:12px;margin-bottom:var(--space-4)}
+.cl__mono{width:46px;height:46px;flex-shrink:0;border-radius:var(--radius-md);background:var(--color-accent-soft);color:var(--color-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;font-size:1.25rem}
+.cl__id h4{font-size:1.08rem;color:var(--color-primary-deep);margin:0 0 2px;line-height:1.15}
+.cl__city{font-size:var(--fs-micro);color:var(--color-text-secondary);display:flex;align-items:center;gap:4px}
+.cl__city svg{font-size:.95rem;flex-shrink:0}
+.cl__tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:var(--space-4)}
+.cl__tag{font-size:var(--fs-micro);background:var(--color-accent-soft);color:var(--color-primary-deep);padding:4px 11px;border-radius:var(--radius-pill);font-weight:600}
+.cl__tag--acc{background:rgba(0,112,205,.08);border:1px solid rgba(0,112,205,.28);color:var(--color-primary);font-weight:700;white-space:nowrap}
+.cl__chk{display:flex;align-items:center;gap:6px;font-size:var(--fs-micro);color:var(--color-success-text);font-weight:700;margin-top:auto;padding-top:var(--space-3);border-top:1px solid var(--color-border)}
+.cl__chk svg{color:var(--color-success);font-size:1.05rem;flex-shrink:0}
 .cl-note{text-align:center;margin-top:var(--space-5);font-size:var(--fs-micro);color:var(--color-text-secondary)}
 /* карточки врачей */
 .docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--space-4)}
