@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lumena.example/sitemap.xml
+Sitemap: https://medbridge-tourizme.example/sitemap.xml

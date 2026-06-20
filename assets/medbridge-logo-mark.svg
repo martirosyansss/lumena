@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="MedBridge Tourizme">
+  <defs>
+    <linearGradient id="mV" x1="50" y1="6" x2="50" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7B85F"/>
+      <stop offset="0.5" stop-color="#F4A24C"/>
+      <stop offset="1" stop-color="#E89A3C"/>
+    </linearGradient>
+    <linearGradient id="mH" x1="6" y1="50" x2="94" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3AA6C2"/>
+      <stop offset="0.5" stop-color="#1E5F74"/>
+      <stop offset="1" stop-color="#103140"/>
+    </linearGradient>
+    <clipPath id="mHtop"><rect x="50" y="36" width="14" height="14"/><rect x="36" y="50" width="14" height="14"/></clipPath>
+  </defs>
+  <rect x="6" y="36" width="88" height="28" rx="14" fill="url(#mH)"/>
+  <rect x="36" y="6" width="28" height="88" rx="14" fill="url(#mV)"/>
+  <g clip-path="url(#mHtop)"><rect x="6" y="36" width="88" height="28" rx="14" fill="url(#mH)"/></g>
+  <path d="M50 36 V64 M36 50 H64" stroke="#FBF8F3" stroke-opacity="0.22" stroke-width="1.4" stroke-linecap="round"/>
+</svg>
