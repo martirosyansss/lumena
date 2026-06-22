@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log*
+.env
+.env.local
+data
+*.log
+bot-live.log
+.git
