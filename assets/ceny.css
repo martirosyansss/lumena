@@ -1,0 +1,101 @@
+/* ============================================================
+   ceny.css — страничные улучшения для «Цены и калькулятор».
+   Всё строго ограничено классом .ceny (на <body>), чтобы не
+   затрагивать остальные страницы, использующие styles.css.
+   Палитра, шрифты, токены — из styles.css. Без новых зависимостей.
+   ============================================================ */
+
+/* ---- Мягкие entrance-анимации (через individual transform-props,
+        чтобы не конфликтовать с hover transform) ---- */
+@keyframes ceRise{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+@keyframes ceRes{from{opacity:0;translate:0 12px;scale:.985}to{opacity:1;translate:0 0;scale:1}}
+@keyframes ceNum{0%{opacity:0;scale:.9}60%{scale:1.02}100%{opacity:1;scale:1}}
+
+/* ---- Бренд-корректность: убрать «тёплые» (золотые) остатки на синем бренде ---- */
+.ceny .seo-hero p{color:#D6E6F7}
+.ceny .cta__text p{color:#C7DBF2}
+
+/* ============ SEO-hero: факт-чипы доверия ============ */
+.ceny .seo-hero h1{letter-spacing:-.02em}
+.ceny-hero__facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--space-5)}
+.ceny-hero__facts li{display:inline-flex;align-items:center;gap:8px;padding:8px 15px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);border-radius:var(--radius-pill);font-size:var(--fs-small);font-weight:600;color:#EAF2FB;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.ceny-hero__facts svg{width:16px;height:16px;color:var(--color-accent);flex-shrink:0}
+
+/* ============ Калькулятор — «гвоздь» страницы ============ */
+.ceny .calc{position:relative;isolation:isolate}
+.ceny .calc::before{content:"";position:absolute;inset:0;z-index:-1;
+  background-image:radial-gradient(rgba(0,112,205,.07) 1px,transparent 1.4px);
+  background-size:24px 24px;
+  -webkit-mask:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);
+  mask:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent)}
+
+.ceny .calc__card{border-radius:var(--radius-xl);box-shadow:0 18px 50px rgba(10,37,74,.10),0 2px 6px rgba(10,37,74,.05)}
+.ceny .calc__card::before{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--color-accent),var(--color-primary) 55%,var(--color-primary-deep))}
+
+/* Прогресс-степпер */
+.ceny .calc__steps{position:relative;--p:0;background:linear-gradient(180deg,#fff,#F7FBFF)}
+.ceny .calc__steps::before{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--color-border)}
+.ceny .calc__steps::after{content:"";position:absolute;left:0;bottom:-1px;height:3px;width:calc(var(--p,0)*100%);background:linear-gradient(90deg,var(--color-accent),var(--color-primary));border-radius:0 3px 3px 0;transition:width .5s var(--ease-soft)}
+.ceny .calc__tab{transition:color .3s,background .3s,opacity .3s}
+.ceny .calc__tab[data-state="done"]{color:var(--color-success-text)}
+.ceny .calc__tab[data-state="active"]{color:var(--color-primary);background:#fff}
+.ceny .calc__tab[data-state="todo"]{color:var(--color-text-secondary);opacity:.65}
+.ceny .calc__tab[aria-current="true"]::after{display:none} /* старое подчёркивание заменено прогресс-баром */
+
+/* Вопрос шага */
+.ceny .calc__q{font-size:1.18rem;animation:ceRise .4s var(--ease-soft) both}
+
+/* Карточки-опции (направление / процедура) */
+.ceny .calc__opts{grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:12px}
+.ceny .calc__opt{align-items:center;gap:14px;padding:15px 16px;border-radius:14px;background:#fff;border:1px solid var(--color-border);box-shadow:0 1px 2px rgba(10,37,74,.04);transition:border-color .22s,box-shadow .22s,transform .22s var(--ease-soft);animation:ceRise .42s var(--ease-soft) both}
+.ceny .calc__opt:hover{border-color:var(--color-primary);box-shadow:0 12px 28px rgba(10,37,74,.11);transform:translateY(-2px)}
+.ceny .calc__opt .ico{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:var(--color-accent-soft);color:var(--color-primary);display:flex;align-items:center;justify-content:center;transition:background .22s,color .22s,transform .22s var(--ease-soft)}
+.ceny .calc__opt .ico svg{width:22px;height:22px}
+.ceny .calc__opt:hover .ico{background:var(--color-primary);color:#fff;transform:scale(1.06)}
+.ceny .calc__opt .tx{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1;text-align:left}
+.ceny .calc__opt .tx b{font-family:var(--font-heading);font-weight:700;font-size:.97rem;color:var(--color-primary-deep);line-height:1.2}
+.ceny .calc__opt .tx small{font-size:var(--fs-micro);color:var(--color-text-secondary);line-height:1.25}
+.ceny .calc__opt .chev{flex-shrink:0;color:var(--color-primary);opacity:.45;display:flex;transition:opacity .22s,transform .22s var(--ease-soft)}
+.ceny .calc__opt .chev svg{width:18px;height:18px}
+.ceny .calc__opt:hover .chev{opacity:1;transform:translateX(3px)}
+/* лёгкая лесенка появления */
+.ceny .calc__opt:nth-child(1){animation-delay:.02s}
+.ceny .calc__opt:nth-child(2){animation-delay:.06s}
+.ceny .calc__opt:nth-child(3){animation-delay:.10s}
+.ceny .calc__opt:nth-child(4){animation-delay:.14s}
+.ceny .calc__opt:nth-child(5){animation-delay:.18s}
+.ceny .calc__opt:nth-child(6){animation-delay:.22s}
+.ceny .calc__opt:nth-child(7){animation-delay:.26s}
+.ceny .calc__opt:nth-child(8){animation-delay:.30s}
+.ceny .calc__opt:nth-child(9){animation-delay:.34s}
+
+/* Шаг «объём» */
+.ceny .calc__qty button{background:var(--color-accent-soft);color:var(--color-primary);transition:background .2s,color .2s,border-color .2s}
+.ceny .calc__qty button:hover{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
+.ceny .calc__qty output{font-size:1.9rem}
+
+/* Результат — драматичная подача итога */
+.ceny .calc__res{background:radial-gradient(130% 120% at 50% -10%,#F2F9FF,#fff 65%);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6) var(--space-5);position:relative;overflow:hidden;animation:ceRes .5s var(--ease-soft) both}
+.ceny .calc__res::before{content:"";position:absolute;top:-70px;left:50%;width:300px;height:300px;translate:-50% 0;background:radial-gradient(circle,rgba(0,112,205,.16),transparent 68%);pointer-events:none}
+.ceny .calc__res>*{position:relative;z-index:1}
+.ceny .calc__res-lbl{font-size:var(--fs-small);letter-spacing:.01em}
+.ceny .calc__res-num{font-size:clamp(2rem,5.5vw,2.9rem);background:linear-gradient(180deg,#2E90FA,#0070CD 55%,#0A2A4A);-webkit-background-clip:text;background-clip:text;color:transparent;animation:ceNum .6s .1s var(--ease-soft) both}
+.ceny .calc__save-pill{box-shadow:0 2px 8px rgba(31,169,113,.18)}
+
+/* ============ Прайс-таблицы: легенда курса, групп-хедеры, hover ============ */
+.ceny-legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 var(--space-5)}
+.ceny-legend span{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-micro);font-weight:600;color:var(--color-text-secondary);background:var(--color-accent-soft);border:1px solid var(--color-border);padding:6px 13px;border-radius:var(--radius-pill)}
+.ceny-legend b{color:var(--color-primary-deep);font-family:var(--font-heading);font-weight:700}
+.ceny-legend svg{width:14px;height:14px;color:var(--color-primary);flex-shrink:0}
+
+.ceny .sv__wrap{border-radius:var(--radius-xl)}
+.ceny .sv tbody tr:hover td:not(.sv__grp){background:#EFF8FF}
+.ceny td.sv__grp{font-family:var(--font-heading);font-weight:700;color:var(--color-primary-deep);background:linear-gradient(90deg,var(--color-accent-soft),#fff);border-top:2px solid var(--color-border);letter-spacing:.01em;padding-left:34px;position:relative}
+.ceny td.sv__grp::before{content:"";position:absolute;left:16px;top:50%;translate:0 -50%;width:7px;height:7px;border-radius:50%;background:var(--color-primary);box-shadow:0 0 0 4px rgba(0,112,205,.14)}
+
+/* Подсказка «листайте таблицу» — только на узких экранах */
+.ceny-scrollhint{display:none}
+@media(max-width:680px){
+  .ceny-scrollhint{display:flex;align-items:center;gap:6px;justify-content:flex-end;font-size:var(--fs-micro);color:var(--color-text-secondary);margin:0 0 8px}
+  .ceny-scrollhint svg{width:14px;height:14px;color:var(--color-primary)}
+}
