@@ -446,3 +446,20 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 
 .dir__more{align-self:flex-start;margin-top:auto;padding-top:var(--space-3);min-height:46px;display:inline-flex;align-items:center;font-family:var(--font-heading);font-weight:600;font-size:var(--fs-small);color:var(--color-primary);text-decoration:none}
 .dir__more:hover{color:var(--color-primary-hover);text-decoration:underline}
+
+/* ============ Внутренние страницы: SEO-hero, хлебные крошки, проза, связки ============ */
+.seo-hero{position:relative;background:var(--color-primary-deep);color:#fff;overflow:hidden;padding:var(--space-8) 0}
+.seo-hero__bg{position:absolute;inset:0;background-position:center right;background-size:cover;opacity:.45}
+.seo-hero__veil{position:absolute;inset:0;background:linear-gradient(95deg,var(--color-primary-deep) 10%,rgba(15,46,61,.7) 60%,rgba(15,46,61,.3))}
+.seo-hero__in{position:relative;z-index:2;max-width:720px}
+.seo-hero h1{font-size:clamp(1.8rem,4.5vw,2.9rem);color:#fff;margin-bottom:var(--space-4);line-height:1.12}
+.seo-hero p{font-size:var(--fs-h4);color:#EAD9BE;font-weight:400;margin-bottom:var(--space-6)}
+.seo-hero .eyebrow{color:var(--color-accent-gold)}
+.seo-hero .hero__cta{display:flex;gap:var(--space-3);flex-wrap:wrap}
+.crumbs{font-size:var(--fs-small);color:var(--color-text-secondary);padding:var(--space-4) 0}
+.crumbs a{color:var(--color-primary);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.prose{max-width:var(--content-measure)}
+.prose p{margin-bottom:var(--space-4);color:var(--color-text-secondary);font-size:var(--fs-body-l)}
+.prose h2{font-size:var(--fs-h3);margin:var(--space-7) 0 var(--space-3);color:var(--color-primary-deep)}
+.related{display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--space-5)}
