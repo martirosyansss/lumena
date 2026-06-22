@@ -21,11 +21,20 @@ export async function sendHtml(ctx, text, extra = {}) {
   return ctx.reply(text, { ...HTML, ...extra });
 }
 
+/** True when Telegram rejected an edit because the content is already current. */
+function isNotModified(err) {
+  return /message is not modified/i.test(err?.description || err?.message || '');
+}
+
 /** Edit the message behind a callback; fall back to a fresh reply if uneditable. */
 export async function editHtml(ctx, text, extra = {}) {
   try {
     return await ctx.editMessageText(text, { ...HTML, ...extra });
-  } catch {
+  } catch (err) {
+    // Re-tapping the same button → "message is not modified": the screen is
+    // already correct, so do nothing instead of sending a duplicate message.
+    if (isNotModified(err)) return undefined;
+    // Message too old / deleted / not editable → send a fresh copy.
     return ctx.reply(text, { ...HTML, ...extra });
   }
 }
@@ -41,5 +50,6 @@ export function resetFlows(ctx) {
   if (ctx.session) {
     ctx.session.lead = undefined;
     ctx.session.calc = undefined;
+    ctx.session.lastSource = undefined;
   }
 }

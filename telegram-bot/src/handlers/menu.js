@@ -9,7 +9,8 @@ import { getLang, ack, editHtml } from '../ui.js';
 function contentKeyboard(lang) {
   return Markup.inlineKeyboard([
     [Markup.button.callback(t(lang, 'btn_lead'), 'm:lead')],
-    [Markup.button.callback(t(lang, 'btn_calc'), 'm:calc'), Markup.button.callback(t(lang, 'btn_menu'), 'm:home')],
+    [Markup.button.callback(t(lang, 'btn_calc'), 'm:calc')],
+    [Markup.button.callback(t(lang, 'btn_menu'), 'm:home')],
   ]);
 }
 
@@ -30,6 +31,24 @@ function contactButtons(lang) {
   rows.push([Markup.button.callback(t(lang, 'btn_lead'), 'm:lead')]);
   rows.push([Markup.button.callback(t(lang, 'btn_menu'), 'm:home')]);
   return Markup.inlineKeyboard(rows);
+}
+
+/**
+ * Guide screen content (text + keyboard). Shared by the menu button (m:guide)
+ * and the `/start guide…` deep-link from the website lead magnet, so both
+ * entry points show exactly the same offer.
+ */
+export function guideView(lang) {
+  if (config.guideUrl) {
+    const link = `<a href="${escapeHtml(config.guideUrl)}">${t(lang, 'guide_open')}</a>`;
+    const kb = Markup.inlineKeyboard([
+      [Markup.button.url(t(lang, 'guide_open'), config.guideUrl)],
+      [Markup.button.callback(t(lang, 'btn_lead'), 'm:lead')],
+      [Markup.button.callback(t(lang, 'btn_menu'), 'm:home')],
+    ]);
+    return { text: t(lang, 'guide_text', { link }), kb };
+  }
+  return { text: t(lang, 'guide_none'), kb: contentKeyboard(lang) };
 }
 
 export function register(bot) {
@@ -65,18 +84,11 @@ export function register(bot) {
 
   bot.action('m:guide', async (ctx) => {
     const lang = getLang(ctx);
+    // Tag the source so a lead started from this screen is attributed to "guide".
+    ctx.session.lastSource = 'guide';
     await ack(ctx);
-    if (config.guideUrl) {
-      const link = `<a href="${escapeHtml(config.guideUrl)}">${t(lang, 'guide_open')}</a>`;
-      const kb = Markup.inlineKeyboard([
-        [Markup.button.url(t(lang, 'guide_open'), config.guideUrl)],
-        [Markup.button.callback(t(lang, 'btn_lead'), 'm:lead')],
-        [Markup.button.callback(t(lang, 'btn_menu'), 'm:home')],
-      ]);
-      await editHtml(ctx, t(lang, 'guide_text', { link }), kb);
-    } else {
-      await editHtml(ctx, t(lang, 'guide_none'), contentKeyboard(lang));
-    }
+    const { text, kb } = guideView(lang);
+    await editHtml(ctx, text, kb);
   });
 
   bot.action('m:contact', async (ctx) => {

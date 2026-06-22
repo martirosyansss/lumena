@@ -104,12 +104,11 @@ export async function submitLead(bot, lead) {
   const backup = await appendBackup(enriched);
   const [tg, sheet] = await Promise.all([deliverTelegram(bot, enriched), deliverSheet(enriched)]);
 
-  const configuredFailed =
-    (tg.configured && !tg.ok) && (sheet.configured ? !sheet.ok : true) && !backup;
   const anyDelivered = tg.ok || sheet.ok;
   const noChannels = !tg.configured && !sheet.configured;
-
   const ok = anyDelivered || (noChannels && backup);
 
-  return { ok, telegram: tg.ok, sheet: sheet.ok, backup, configuredFailed };
+  console.log(`[leads] new lead: telegram=${tg.ok} sheet=${sheet.ok} backup=${backup} ok=${ok}`);
+
+  return { ok, telegram: tg.ok, sheet: sheet.ok, backup };
 }

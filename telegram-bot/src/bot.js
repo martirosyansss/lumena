@@ -12,9 +12,10 @@ import * as lead from './handlers/lead.js';
 const bot = new Telegraf(config.botToken, { handlerTimeout: 30_000 });
 
 // --- Session ----------------------------------------------------------------
+const sessionStore = createFileSessionStore('data/sessions.json');
 bot.use(
   session({
-    store: createFileSessionStore('data/sessions.json'),
+    store: sessionStore,
     defaultSession: () => ({}),
   }),
 );
@@ -70,8 +71,16 @@ async function main() {
   await bot.launch({ dropPendingUpdates: true });
 }
 
-process.once('SIGINT', () => bot.stop('SIGINT'));
-process.once('SIGTERM', () => bot.stop('SIGTERM'));
+let stopping = false;
+async function shutdown(signal) {
+  if (stopping) return;
+  stopping = true;
+  bot.stop(signal);
+  // Flush any debounced session writes so in-progress flows survive a restart.
+  await sessionStore.flush();
+}
+process.once('SIGINT', () => shutdown('SIGINT'));
+process.once('SIGTERM', () => shutdown('SIGTERM'));
 process.on('unhandledRejection', (reason) => console.error('[bot] unhandledRejection:', reason));
 
 main().catch((err) => {

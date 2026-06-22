@@ -23,17 +23,30 @@ export function createFileSessionStore(file) {
     }
   }
 
+  async function persist() {
+    try {
+      await fs.mkdir(path.dirname(filePath), { recursive: true });
+      await fs.writeFile(filePath, JSON.stringify(Object.fromEntries(map)), 'utf8');
+    } catch (err) {
+      console.error('[session] save failed:', err.message);
+    }
+  }
+
   function scheduleSave() {
     if (timer) return;
-    timer = setTimeout(async () => {
+    timer = setTimeout(() => {
       timer = null;
-      try {
-        await fs.mkdir(path.dirname(filePath), { recursive: true });
-        await fs.writeFile(filePath, JSON.stringify(Object.fromEntries(map)), 'utf8');
-      } catch (err) {
-        console.error('[session] save failed:', err.message);
-      }
+      persist();
     }, 1000);
+  }
+
+  /** Cancel the pending debounce and write immediately (call on shutdown). */
+  async function flush() {
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+    await persist();
   }
 
   return {
@@ -51,5 +64,6 @@ export function createFileSessionStore(file) {
       map.delete(name);
       scheduleSave();
     },
+    flush,
   };
 }

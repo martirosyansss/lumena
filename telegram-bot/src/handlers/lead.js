@@ -14,6 +14,8 @@ import { submitLead } from '../leads.js';
 
 const MAX_NAME = 60;
 const MAX_COMMENT = 600;
+// Anti-spam: minimum gap between two lead submissions from the same user.
+const LEAD_COOLDOWN_MS = 2 * 60 * 1000;
 
 function validName(s) {
   const n = s.trim();
@@ -74,7 +76,9 @@ async function cancelLead(ctx) {
 export function register(bot) {
   // Enter the lead flow (from the menu, calculator CTA, FAQ, etc.).
   bot.action('m:lead', async (ctx) => {
-    ctx.session.lastSource = ctx.session.calc?.dir ? 'calculator' : 'menu';
+    // Source priority: an active calculator > a screen that pre-tagged itself
+    // (e.g. the guide) > plain menu.
+    ctx.session.lastSource = ctx.session.calc?.dir ? 'calculator' : ctx.session.lastSource || 'menu';
     await ack(ctx);
     await startLead(ctx, { edit: true });
   });
@@ -123,6 +127,13 @@ export function register(bot) {
     const l = ctx.session.lead;
     if (!l || l.step !== 'confirm') return ack(ctx);
     await ack(ctx);
+
+    // Throttle repeat submissions so one user can't flood the manager / Sheet.
+    if (Date.now() - (ctx.session.lastLeadAt || 0) < LEAD_COOLDOWN_MS) {
+      resetFlows(ctx);
+      return sendHtml(ctx, t(lang, 'lead_too_soon'), backToMenu(lang));
+    }
+    ctx.session.lastLeadAt = Date.now();
 
     const lead = {
       procedure: l.procedure,

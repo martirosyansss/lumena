@@ -126,9 +126,9 @@ export const DATA = {
       {
         id: 'reprocustom',
         label: {
-          ru: 'ЭКО · суррогатное материнство · донорство',
-          en: 'IVF · surrogacy · donor programs',
-          hy: 'ԷՔՕ · սուրոգատ մայրություն · դոնорություն',
+          ru: 'Подобрать программу',
+          en: 'Choose a program',
+          hy: 'Ընտրել ծրագիր',
         },
         custom: true,
       },

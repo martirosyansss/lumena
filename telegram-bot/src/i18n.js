@@ -52,22 +52,22 @@ const ru = {
     'Итоговая стоимость индивидуальна. Имеются противопоказания, необходима консультация специалиста.</i>',
 
   faq_title: 'Частые вопросы — выберите свой 👇',
-  faq_q1: 'А качество лечения там достойное?',
+  faq_q1: 'Качество лечения достойное?',
   faq_a1:
     'Мы работаем с многопрофильными клиниками и профильными центрами Армении — современное оборудование, опытные врачи, репутация среди пациентов, в том числе из России. Мы не клиника и не обещаем результат лечения — его определяет врач после очной консультации. Имеются противопоказания, необходима консультация специалиста.',
-  faq_q2: 'Кто отвечает, если возникнут вопросы по лечению?',
+  faq_q2: 'Кто отвечает за лечение?',
   faq_a2:
     'За медицинскую часть отвечает клиника, с которой вы заключаете прямой договор. MedBridge Tourism отвечает за организацию: подбор, координацию, сопровождение и связь с клиникой. Координатор поможет быстро выйти на врача и разобраться в ситуации.',
-  faq_q3: 'Это не развод? Почему вам можно доверять?',
+  faq_q3: 'Это не развод?',
   faq_a3:
     'Понимаем опасение — поэтому всё строится на прозрачности. За лечение вы платите напрямую клинике по её договору, деньги не проходят через нас. Смету «под ключ» вы видите заранее, до поездки. Расчёт и подбор клиники бесплатны и ни к чему не обязывают.',
-  faq_q4: 'Сколько в итоге я заплачу? Есть скрытые доплаты?',
+  faq_q4: 'Сколько я заплачу?',
   faq_a4:
     'Мы заранее показываем смету «под ключ»: лечение, перелёт, проживание, трансферы. Цены на сайте — это диапазоны-ориентиры, а не ваша персональная смета. Итоговую стоимость мы рассчитаем бесплатно перед поездкой, чтобы сюрпризов на месте не было.',
-  faq_q5: 'Насколько безопасно ехать лечиться в другую страну?',
+  faq_q5: 'Безопасно ли ехать лечиться?',
   faq_a5:
     'Армения — страна ЕАЭС: въезд по внутреннему паспорту РФ, без виз. Перелёт из Москвы — 2,5–3 часа, в клиниках есть русскоязычный персонал, координатор на связи 24/7. Вся поездка обычно занимает от 3 до 14 дней.',
-  faq_q6: 'ЭКО и репродукция — это конфиденциально?',
+  faq_q6: 'ЭКО — это конфиденциально?',
   faq_a6:
     'Да, полная приватность — наш приоритет. Деликатно помогаем с доступом к легальным для граждан РФ программам, включая суррогатное материнство и донорство. Общение — только по удобным вам каналам. Медицинские вопросы решаются с профильными специалистами клиники.',
 
@@ -83,8 +83,8 @@ const ru = {
   calc_custom:
     '<b>{label}</b>\n\n' +
     'Эту программу считаем индивидуально под ваш случай. Оставьте контакт — координатор бесплатно посчитает смету «под ключ» за 1 день, ни к чему вас не обязывая.',
-  calc_cta: '📩 Получить точную смету бесплатно',
-  calc_again: '↻ Посчитать заново',
+  calc_cta: '📩 Получить смету бесплатно',
+  calc_again: '↻ Заново',
   calc_disclaimer:
     '<i>Рыночный ориентир из открытых прайс-листов, а не оферта и не персональная смета. Итоговая стоимость индивидуальна. Имеются противопоказания, необходима консультация специалиста.</i>',
   from: 'от',
@@ -107,7 +107,7 @@ const ru = {
     '<b>Комментарий:</b> {comment}\n\n' +
     'Всё верно?',
   lead_submit: '✅ Отправить заявку',
-  lead_edit: '✏️ Заполнить заново',
+  lead_edit: '✏️ Заново',
   lead_cancel: '✖️ Отменить',
   lead_submitted:
     '🎉 Спасибо, {name}! Заявка принята.\n\n' +
@@ -122,6 +122,9 @@ const ru = {
   lead_invalid_phone:
     'Это не похоже на номер. Впишите в формате +7 900 000-00-00 или нажмите «Поделиться телефоном».',
   lead_cancelled: 'Заявка отменена. Если передумаете — я на связи 👇',
+  lead_too_soon:
+    'Вы только что оставили заявку — координатор уже получил её и скоро свяжется. ' +
+    'Если вопрос срочный, напишите напрямую 👇',
   no_comment: '—',
 
   contact_text: 'Личный координатор MedBridge Tourism на связи 24/7:\n\n{links}\n\nНапишите в удобном канале — ответим и поможем.',
@@ -178,22 +181,22 @@ const en = {
     'The final cost is individual. Contraindications exist; a specialist consultation is required.</i>',
 
   faq_title: 'FAQ — pick a question 👇',
-  faq_q1: 'Is the quality of treatment really good?',
+  faq_q1: 'Is the quality really good?',
   faq_a1:
     'We work with multidisciplinary clinics and specialized centers in Armenia — modern equipment, experienced doctors, a track record with patients including from Russia. We are not a clinic and do not promise treatment outcomes — only a doctor decides that after an in-person consultation. Contraindications exist; a specialist consultation is required.',
-  faq_q2: 'Who is responsible if questions arise during treatment?',
+  faq_q2: 'Who is responsible?',
   faq_a2:
     'The clinic you sign a direct contract with is responsible for the medical part. MedBridge Tourism is responsible for the organization: matching, coordination, support and liaison with the clinic. Your coordinator helps you reach the doctor quickly.',
-  faq_q3: "Isn't this a scam? Why should I trust you?",
+  faq_q3: "Isn't this a scam?",
   faq_a3:
     'We understand the concern — that is why everything is built on transparency. You pay the clinic directly under its contract; money does not pass through us. You see the turnkey estimate in advance, before the trip. The estimate and clinic matching are free and carry no obligation.',
-  faq_q4: 'How much will I pay in the end? Any hidden fees?',
+  faq_q4: 'How much will I pay?',
   faq_a4:
     'We show the turnkey estimate in advance: treatment, flight, accommodation, transfers. Site prices are reference ranges, not your personal estimate. We calculate the final cost for free before the trip so there are no surprises on site.',
-  faq_q5: 'How safe is it to travel abroad for treatment?',
+  faq_q5: 'Is it safe to travel abroad?',
   faq_a5:
     'Armenia is an EAEU country: entry with a Russian internal passport, no visa. The flight from Moscow is 2.5–3 hours, clinics have Russian-speaking staff, and the coordinator is available 24/7. The whole trip usually takes 3 to 14 days.',
-  faq_q6: 'IVF and reproduction — is it confidential?',
+  faq_q6: 'IVF — is it confidential?',
   faq_a6:
     'Yes, full privacy is our priority. We discreetly help with access to programs legal for Russian citizens, including surrogacy and donor programs. We communicate only through channels convenient for you. Medical questions are handled with the clinic specialists.',
 
@@ -209,8 +212,8 @@ const en = {
   calc_custom:
     '<b>{label}</b>\n\n' +
     'We calculate this program individually for your case. Leave your contact — a coordinator will prepare a free turnkey estimate within 1 day, with no obligation.',
-  calc_cta: '📩 Get an exact estimate for free',
-  calc_again: '↻ Calculate again',
+  calc_cta: '📩 Get a free estimate',
+  calc_again: '↻ Again',
   calc_disclaimer:
     '<i>A market benchmark from public price lists — not an offer or a personal estimate. The final cost is individual. Contraindications exist; a specialist consultation is required.</i>',
   from: 'from',
@@ -247,6 +250,9 @@ const en = {
   lead_invalid_phone:
     "That doesn't look like a phone number. Type it as +1 555 000-0000 or tap “Share phone number”.",
   lead_cancelled: 'Request cancelled. If you change your mind — I am here 👇',
+  lead_too_soon:
+    'You just submitted a request — the coordinator already has it and will contact you soon. ' +
+    'If it is urgent, write directly 👇',
   no_comment: '—',
 
   contact_text: 'Your personal MedBridge Tourism coordinator is available 24/7:\n\n{links}\n\nWrite on any convenient channel — we will help.',
@@ -303,22 +309,22 @@ const hy = {
     'Վերջնական արժեքը անհատական է։ Կան հակացուցումներ, անհրաժեշտ է մասնագետի խորհրդատվություն։</i>',
 
   faq_title: 'Հաճախակի հարցեր — ընտրեք Ձերը 👇',
-  faq_q1: 'Բուժման որակն այնտեղ արժանապատի՞վ է։',
+  faq_q1: 'Բուժման որակը լա՞վ է։',
   faq_a1:
     'Մենք աշխատում ենք Հայաստանի բազմապրոֆիլ կլինիկաների և մասնագիտացված կենտրոնների հետ՝ ժամանակակից սարքավորում, փորձառու բժիշկներ, համբավ՝ ներառյալ ՌԴ-ից եկած հիվանդների շրջանում։ Մենք կլինիկա չենք և բուժման արդյունք չենք խостանում — դա որոշում է բժիշկը՝ առկա խորհրդատվությունից հետո։ Կան հակացուցումներ, անհրաժեշտ է մասնագետի խորհրդատվություն։',
-  faq_q2: 'Ո՞վ է պատասխանատու, եթե բուժման ընթացքում հարցեր առաջանան։',
+  faq_q2: 'Ո՞վ է պատասխանատու։',
   faq_a2:
     'Բժշկական մասի համար պատասխանատու է կլինիկան, որի հետ Դուք ուղիղ պայմանագիր եք կնքում։ MedBridge Tourism-ը պատասխանատու է կազմակերպման համար՝ ընտրություն, համակարգում, ուղեկցում և կապ կլինիկայի հետ։ Համակարգողն օգնում է արագ կապ հաստատել բժշկի հետ։',
-  faq_q3: 'Սա խաբեություն չէ՞։ Ինչո՞ւ Ձեզ վստահել։',
+  faq_q3: 'Սա խաբեությո՞ւն չէ։',
   faq_a3:
     'Հասկանում ենք մտահոգությունը — հենց դրա համար ամեն ինչ կառուցված է թափանցիկության վրա։ Բուժման համար վճարում եք ուղիղ կլինիկային՝ իր պայմանագրով, գումարը մեր միջով չի անցնում։ «Բանալին ձեռքին» նախահաշիվը տեսնում եք նախապես՝ ճամփորդությունից առաջ։ Հաշվարկն ու ընտրությունն անվճար են և ոչնչի չեն պարտավորեցնում։',
-  faq_q4: 'Վերջում որքա՞ն կվճարեմ։ Թաքնված վճարներ կա՞ն։',
+  faq_q4: 'Որքա՞ն կվճարեմ։',
   faq_a4:
     'Մենք նախապես ցույց ենք տալիս «բանալին ձեռքին» նախահաշիվը՝ բուժում, թռիչք, բնակեցում, տրանսֆերներ։ Կայքի գները կողմնորоշիչ միջակայքեր են, ոչ թե Ձեր անձնական նախահաշիվը։ Վերջնական արժեքը անվճար հաշվարկում ենք ճամփորդությունից առաջ՝ որպեսզի տեղում անակնկալներ չլինեն։',
-  faq_q5: 'Որքանո՞վ է անվտանգ բուժման համար այլ երկիր մեկնելը։',
+  faq_q5: 'Անվտա՞նգ է մեկնել արտերկիր։',
   faq_a5:
     'Հայաստանը ԵԱՏՄ երկիր է՝ մուտք ՌԴ ներքին անձնագրով, առանց վիզայի։ Թռիչքը Մոսկվայից 2,5–3 ժամ է, կլինիկաներում կա ռուսախоս անձնակազմ, համակարգողը կապի մեջ է 24/7։ Ողջ ճամփորդությունը սովորաբար տևում է 3–14 օր։',
-  faq_q6: 'ԷՔՕ-ն և վերարտադրողականությունը գաղտնի՞ են։',
+  faq_q6: 'ԷՔՕ-ն գաղտնի՞ է։',
   faq_a6:
     'Այո, լիարժեք գաղտնիությունը մեր առաջնահերթությունն է։ Նրբորեն օգնում ենք ՌԴ քաղաքացիների համար օրինական ծրագրերի հասանելիությանը, ներառյալ սուրոգատ մայրություն և դոնорություն։ Շփումը՝ միայն Ձեզ հարմար ուղիներով։ Բժշկական հարցերը լուծվում են կլինիկայի մասնագետների հետ։',
 
@@ -334,8 +340,8 @@ const hy = {
   calc_custom:
     '<b>{label}</b>\n\n' +
     'Այս ծրագիրը հաշվում ենք անհատապես՝ Ձեր դեպքի համար։ Թողեք կոնտակտ — համակարգողը 1 օրում անվճար կհաշվի «բանալին ձեռքին» նախահաշիվը՝ առանց պարտավորության։',
-  calc_cta: '📩 Ստանալ ճշգրիտ նախահաշիվ անվճար',
-  calc_again: '↻ Հաշվել կրկին',
+  calc_cta: '📩 Անվճար նախահաշիվ',
+  calc_again: '↻ Կրկին',
   calc_disclaimer:
     '<i>Շուկայական կողմնорошիչ բաց գնացուցակներից, ոչ թե օֆերտա կամ անձնական նախահաշիվ։ Վերջնական արժեքը անհատական է։ Կան հակացուցումներ, անհրաժեշտ է մասնագետի խորհրդատվություն։</i>',
   from: 'սկսած',
@@ -357,7 +363,7 @@ const hy = {
     '<b>Մեկնաբանություն՝</b> {comment}\n\n' +
     'Ամեն ինչ ճի՞շտ է։',
   lead_submit: '✅ Ուղարկել հայտը',
-  lead_edit: '✏️ Լրացնել նորից',
+  lead_edit: '✏️ Նորից',
   lead_cancel: '✖️ Չեղարկել',
   lead_submitted:
     '🎉 Շնорհակալություն, {name}! Հայտը ընդունված է։\n\n' +
@@ -371,7 +377,10 @@ const hy = {
   lead_invalid_name: 'Խնդրում ենք գրել անունը տեքստով (նվազագույնը 2 տառ)։',
   lead_invalid_phone:
     'Սա հեռախоսահամарի նման չէ։ Գրեք +374 00 000-000 ձևաչափով կամ սեղմեք «Կիսվել հեռախоսահамаром»։',
-  lead_cancelled: 'Հայտը չեղарկվեց։ Եթե մտափոխվեք — ես կապի մեջ եմ 👇',
+  lead_cancelled: 'Հայտը չեղարկվեց։ Եթե մտափոխվեք — ես կապի մեջ եմ 👇',
+  lead_too_soon:
+    'Դուք հենց նոր թողեցիք հայտ — համակարգողն արդեն ստացել է այն և շուտով կկապվի։ ' +
+    'Եթե հարցը շտապ է, գրեք ուղիղ 👇',
   no_comment: '—',
 
   contact_text: 'MedBridge Tourism-ի անձնական համակարգողը կապի մեջ է 24/7՝\n\n{links}\n\nԳրեք Ձեզ հարմар ուղիով — կօգնենք։',

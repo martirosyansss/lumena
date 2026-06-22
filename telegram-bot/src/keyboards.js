@@ -9,11 +9,16 @@ export function languageKeyboard() {
 
 // --- Main menu --------------------------------------------------------------
 export function mainMenu(lang) {
+  // One button per row: long labels (e.g. "Связаться с координатором") get the
+  // full message width and never truncate with "…" on narrow phones.
   return Markup.inlineKeyboard([
     [Markup.button.callback(t(lang, 'btn_lead'), 'm:lead')],
-    [Markup.button.callback(t(lang, 'btn_calc'), 'm:calc'), Markup.button.callback(t(lang, 'btn_savings'), 'm:save')],
-    [Markup.button.callback(t(lang, 'btn_directions'), 'm:dir'), Markup.button.callback(t(lang, 'btn_faq'), 'm:faq')],
-    [Markup.button.callback(t(lang, 'btn_guide'), 'm:guide'), Markup.button.callback(t(lang, 'btn_contact'), 'm:contact')],
+    [Markup.button.callback(t(lang, 'btn_calc'), 'm:calc')],
+    [Markup.button.callback(t(lang, 'btn_savings'), 'm:save')],
+    [Markup.button.callback(t(lang, 'btn_directions'), 'm:dir')],
+    [Markup.button.callback(t(lang, 'btn_faq'), 'm:faq')],
+    [Markup.button.callback(t(lang, 'btn_guide'), 'm:guide')],
+    [Markup.button.callback(t(lang, 'btn_contact'), 'm:contact')],
     [Markup.button.callback(t(lang, 'btn_lang'), 'm:lang')],
   ]);
 }
