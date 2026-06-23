@@ -78,13 +78,35 @@ function startHealthServer() {
     .listen(port, () => console.log(`[bot] health server listening on :${port}`));
 }
 
+// Launch polling, tolerating 409 ("another getUpdates is running"). The health
+// server stays up the whole time, so the platform keeps the service "live"
+// while we wait for any other instance to go away, then we take over polling.
+async function launchWithRetry() {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      await bot.launch({ dropPendingUpdates: true });
+      return; // resolves only on graceful stop
+    } catch (err) {
+      if (err?.response?.error_code === 409) {
+        console.warn(
+          `[bot] 409 Conflict: другой инстанс ещё опрашивает Telegram (попытка ${attempt}). ` +
+            'Повтор через 10с. Должна работать только ОДНА копия бота.',
+        );
+        await new Promise((r) => setTimeout(r, 10_000));
+        continue;
+      }
+      throw err;
+    }
+  }
+}
+
 async function main() {
   warnOptional();
   startHealthServer();
   await bot.telegram.setMyCommands(COMMANDS).catch((e) => console.warn('[bot] setMyCommands failed:', e.message));
   const me = await bot.telegram.getMe();
-  console.log(`[bot] @${me.username} is up (long polling). Press Ctrl+C to stop.`);
-  await bot.launch({ dropPendingUpdates: true });
+  console.log(`[bot] @${me.username} starting polling… (one instance only)`);
+  await launchWithRetry();
 }
 
 let stopping = false;
