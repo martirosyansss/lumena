@@ -1,48 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" role="img" aria-label="MedBridge Tourism">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Onest:wght@800&amp;display=swap');
-      .lm-word{font-family:'Onest','Golos Text','Segoe UI',system-ui,sans-serif;font-weight:800;letter-spacing:-1.5px;}
+      @import url('https://fonts.googleapis.com/css2?family=Onest:wght@600;800&amp;display=swap');
+      .mb-word{font-family:'Onest','Segoe UI',system-ui,sans-serif;font-weight:800;letter-spacing:-1.5px;}
+      .mb-sub{font-family:'Onest','Segoe UI',system-ui,sans-serif;font-weight:600;letter-spacing:6px;}
     </style>
-    <!-- icon gradients (local icon space 0..100) -->
-    <linearGradient id="lmV" x1="50" y1="6" x2="50" y2="94" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#5AB0FF"/>
-      <stop offset="0.5" stop-color="#2E90FA"/>
-      <stop offset="1" stop-color="#0070CD"/>
+    <linearGradient id="mbHeart" x1="50" y1="12" x2="50" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF8FB1"/>
+      <stop offset="0.5" stop-color="#FF8A5B"/>
+      <stop offset="1" stop-color="#F4A24C"/>
     </linearGradient>
-    <linearGradient id="lmH" x1="6" y1="50" x2="94" y2="50" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#3E78B0"/>
-      <stop offset="0.5" stop-color="#0A2A4A"/>
-      <stop offset="1" stop-color="#061A2E"/>
+    <linearGradient id="mbWord" x1="150" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF7E8F"/>
+      <stop offset="1" stop-color="#F4882F"/>
     </linearGradient>
-    <!-- wordmark gradient -->
-    <linearGradient id="lmWord" x1="152" y1="0" x2="320" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#2E90FA"/>
-      <stop offset="1" stop-color="#0070CD"/>
-    </linearGradient>
-    <clipPath id="lmHtop"><rect x="50" y="36" width="14" height="14"/><rect x="36" y="50" width="14" height="14"/></clipPath>
-    <filter id="lmShadow" x="-20%" y="-20%" width="140%" height="160%">
-      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#0A2A4A" flood-opacity="0.16"/>
+    <filter id="mbShadow" x="-20%" y="-20%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#B4541E" flood-opacity="0.18"/>
     </filter>
   </defs>
 
-  <!-- ICON: interlocking rounded medical cross -->
-  <g transform="translate(16,24) scale(1.12)" filter="url(#lmShadow)">
-    <!-- horizontal link (cool) drawn first -->
-    <rect x="6" y="36" width="88" height="28" rx="14" fill="url(#lmH)"/>
-    <!-- vertical link (warm) over it -->
-    <rect x="36" y="6" width="28" height="88" rx="14" fill="url(#lmV)"/>
-    <!-- weave: bring horizontal back on top at TR + BL quadrants -->
-    <g clip-path="url(#lmHtop)">
-      <rect x="6" y="36" width="88" height="28" rx="14" fill="url(#lmH)"/>
+  <!-- ICON: heart + bridge arch -->
+  <g transform="translate(14,26) scale(1.10)" filter="url(#mbShadow)">
+    <path fill="url(#mbHeart)" d="M50 86C18 64 14 44 14 34C14 22 24 16 33 16C41 16 47 21 50 27C53 21 59 16 67 16C76 16 86 22 86 34C86 44 82 64 50 86Z"/>
+    <g fill="#ffffff" stroke="#ffffff" stroke-linecap="round">
+      <path d="M27 61 Q50 36 73 61" fill="none" stroke-width="5.2"/>
+      <rect x="24" y="60.4" width="52" height="5.2" rx="2.6" stroke="none"/>
+      <path d="M40 61 V51 M60 61 V51" stroke-width="3.3"/>
+      <rect x="28.8" y="64" width="4.8" height="9" rx="2.4" stroke="none"/>
+      <rect x="66.4" y="64" width="4.8" height="9" rx="2.4" stroke="none"/>
     </g>
-    <!-- weave seams: soft ridges to read over/under -->
-    <path d="M50 36 V64 M36 50 H64" stroke="#EFF8FF" stroke-opacity="0.22" stroke-width="1.4" stroke-linecap="round"/>
   </g>
 
   <!-- WORDMARK -->
-  <text class="lm-word" x="150" y="68" font-size="58" dominant-baseline="central" text-anchor="start">
-    <tspan fill="url(#lmWord)">Med</tspan><tspan fill="#0A2A4A">Bridge</tspan>
+  <text class="mb-word" x="150" y="68" font-size="58" dominant-baseline="central" text-anchor="start">
+    <tspan fill="url(#mbWord)">Med</tspan><tspan fill="#0A2A4A">Bridge</tspan>
   </text>
-  <text x="152" y="112" font-family="'Onest','Golos Text','Segoe UI',system-ui,sans-serif" font-weight="600" font-size="21" letter-spacing="6" fill="#0070CD" text-anchor="start">TOURISM</text>
+  <text class="mb-sub" x="152" y="112" font-size="21" fill="#F4882F" text-anchor="start">TOURISM</text>
 </svg>
