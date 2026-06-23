@@ -16,10 +16,29 @@ for (const p of ['/etc/secrets/.env', '/etc/secrets/env']) {
 
 const clean = (v) => (typeof v === 'string' ? v.trim() : '');
 
+const EXPECTED_KEYS = [
+  'BOT_TOKEN', 'MANAGER_CHAT_ID', 'SHEETS_WEBAPP_URL', 'SHEETS_SECRET',
+  'COORDINATOR_WHATSAPP', 'COORDINATOR_PHONE', 'GUIDE_URL', 'SITE_URL', 'DEFAULT_LANG',
+];
+
+function diagnose() {
+  try {
+    const dir = '/etc/secrets';
+    const files = fs.existsSync(dir) ? fs.readdirSync(dir) : [];
+    console.error(`[config] /etc/secrets contents: ${JSON.stringify(files)}`);
+  } catch (e) {
+    console.error('[config] cannot read /etc/secrets:', e.message);
+  }
+  const present = EXPECTED_KEYS.filter((k) => clean(process.env[k]));
+  console.error(`[config] env keys present: ${present.length ? present.join(', ') : '(none)'}`);
+}
+
 function required(name) {
   const v = clean(process.env[name]);
   if (!v) {
-    console.error(`[config] Missing required env var: ${name}. Copy .env.example to .env and fill it in.`);
+    console.error(`[config] Missing required env var: ${name}.`);
+    diagnose();
+    console.error('[config] Set it via Render → Environment (each var on its own row) or a Secret File named .env.');
     process.exit(1);
   }
   return v;
