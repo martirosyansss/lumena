@@ -11,9 +11,17 @@
  *      - Who has access: Anyone
  *    Copy the Web app URL into the bot's .env as SHEETS_WEBAPP_URL.
  * 5. Re-deploy after any edit (Deploy → Manage deployments → Edit → Deploy).
+ *
+ * Принимает заявки из двух источников:
+ *   • Telegram-бот — присылает SECRET (приватный, только на сервере бота).
+ *   • Форма на сайте index.html — присылает WEB_SECRET (публичный, лежит
+ *     в коде страницы). Отдельный ключ нужен, чтобы публичный сайт НЕ
+ *     раскрывал приватный ключ бота. Значение WEB_SECRET ниже должно
+ *     совпадать с константой WEB_LEAD_SECRET в index.html.
  */
 
-const SECRET = 'Nq4GdXTpqh9iLTHpL2HMrlKn';
+const SECRET = 'Nq4GdXTpqh9iLTHpL2HMrlKn';      // приватный — Telegram-бот
+const WEB_SECRET = 'Gt9Vz5xN_o0TQOA1UxIrCafK';  // публичный — форма на сайте
 const SHEET_NAME = 'Leads';
 const HEADERS = [
   'Время (МСК)', 'ISO', 'Направление', 'Имя', 'Телефон',
@@ -23,7 +31,8 @@ const HEADERS = [
 function doPost(e) {
   try {
     const body = JSON.parse(e.postData.contents);
-    if (SECRET && body.secret !== SECRET) {
+    const okSecret = body.secret === SECRET || (WEB_SECRET && body.secret === WEB_SECRET);
+    if (!okSecret) {
       return jsonOut({ ok: false, error: 'forbidden' });
     }
 

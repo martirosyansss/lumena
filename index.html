@@ -136,16 +136,19 @@
 </div></section>
 <section id="cta" class="cta"><div class="wrap"><div class="cta__grid">
   <div class="cta__text"><h2>Сделайте первый спокойный шаг</h2><p>Расскажите о своей ситуации — мы бесплатно подберём подходящую клинику и посчитаем смету «под ключ» за 1 день. Это ни к чему вас не обязывает: вы просто получите ясную картину и сможете спокойно решить.</p><div class="hero__badges"><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Прозрачная цена «под ключ» — всё включено</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Без виз — въезд по паспорту РФ</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Перелёт 2,5–3 часа</div><div class="tb"><span class="tb__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 4.7L18.5 9 13.8 10.8 12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/></svg></span>Личный координатор 24/7</div></div></div>
-  <form class="cta__form" onsubmit="return false" aria-label="Заявка на бесплатный расчёт">
-    <label class="fld"><span>Как к вам обращаться <span class="req" aria-hidden="true">*</span></span><input type="text" autocomplete="name" required></label><label class="fld"><span>Телефон или мессенджер (Telegram / WhatsApp) <span class="req" aria-hidden="true">*</span></span><input type="tel" inputmode="tel" autocomplete="tel" required placeholder="+7 ___ ___-__-__"></label><label class="fld"><span>Какое направление интересует</span><select autocomplete="off"><option>Стоматология</option><option>Пластическая хирургия</option><option>ЭКО / репродукция</option><option>Хирургия</option><option>Чек-ап</option><option>Не определился(ась)</option></select></label><label class="fld"><span>Коротко о вашей задаче (по желанию)</span><input type="text"></label><div class="fld"><span>Куда координатору удобнее вам написать?</span><div class="chan" role="radiogroup" aria-label="Предпочтительный канал связи">
-      <input type="radio" name="chan" id="ch-tg" checked><label for="ch-tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4 3 11l5 2 2 6 3-4 5 4z"/><path d="M8 13l9-7"/></svg>Telegram</label>
-      <input type="radio" name="chan" id="ch-wa"><label for="ch-wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L4 20l1.1-4.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 9.5c0 4 2 6 6 6"/></svg>WhatsApp</label>
-      <input type="radio" name="chan" id="ch-vb"><label for="ch-vb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H10l-4 4V5a2 2 0 0 1 1-2z"/><path d="M10 8a3 3 0 0 1 3 3"/></svg>Viber</label>
-      <input type="radio" name="chan" id="ch-ph"><label for="ch-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 18l4 2v-2a2 2 0 0 0-2-2"/><path d="M5 4a16 16 0 0 0 16 16"/></svg>Звонок</label>
+  <form class="cta__form" id="ctaForm" aria-label="Заявка на бесплатный расчёт">
+    <div class="cta__fields">
+    <p class="hp" aria-hidden="true"><label>Не заполняйте это поле<input type="text" name="company" tabindex="-1" autocomplete="off"></label></p>
+    <label class="fld"><span>Как к вам обращаться <span class="req" aria-hidden="true">*</span></span><input type="text" name="name" autocomplete="name" required></label><label class="fld"><span>Телефон или мессенджер (Telegram / WhatsApp) <span class="req" aria-hidden="true">*</span></span><input type="tel" name="phone" inputmode="tel" autocomplete="tel" required placeholder="+7 ___ ___-__-__"></label><label class="fld"><span>Какое направление интересует</span><select name="procedure" autocomplete="off"><option>Стоматология</option><option>Пластическая хирургия</option><option>ЭКО / репродукция</option><option>Хирургия</option><option>Чек-ап</option><option>Не определился(ась)</option></select></label><label class="fld"><span>Коротко о вашей задаче (по желанию)</span><input type="text" name="comment"></label><div class="fld"><span>Куда координатору удобнее вам написать?</span><div class="chan" role="radiogroup" aria-label="Предпочтительный канал связи">
+      <input type="radio" name="chan" id="ch-tg" value="Telegram" checked><label for="ch-tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4 3 11l5 2 2 6 3-4 5 4z"/><path d="M8 13l9-7"/></svg>Telegram</label>
+      <input type="radio" name="chan" id="ch-wa" value="WhatsApp"><label for="ch-wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L4 20l1.1-4.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 9.5c0 4 2 6 6 6"/></svg>WhatsApp</label>
+      <input type="radio" name="chan" id="ch-vb" value="Viber"><label for="ch-vb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H10l-4 4V5a2 2 0 0 1 1-2z"/><path d="M10 8a3 3 0 0 1 3 3"/></svg>Viber</label>
+      <input type="radio" name="chan" id="ch-ph" value="Звонок"><label for="ch-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 18l4 2v-2a2 2 0 0 0-2-2"/><path d="M5 4a16 16 0 0 0 16 16"/></svg>Звонок</label>
     </div></div>
     <label class="consent"><input type="checkbox" checked required> <span>Имеются противопоказания, необходима консультация специалиста. MedBridge Tourism оказывает организационные и информационные услуги и не осуществляет медицинскую деятельность; решение о лечении принимает врач после очной консультации. Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности и даёте согласие на обработку персональных данных в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</span></label>
-    <button class="btn btn--d" type="submit">Получить бесплатный расчёт</button>
+    <button class="btn btn--d cta__submit" type="submit"><span class="cta__submit-label">Получить бесплатный расчёт</span><span class="cta__spin" aria-hidden="true"></span></button>
     <p class="cta__disc">Имеются противопоказания, необходима консультация специалиста.</p>
+    </div>
   </form>
 </div></div></section>
 </main>
@@ -181,6 +184,97 @@ document.querySelectorAll('.reveal').forEach(function(x){io.observe(x)});}
     if(!f.checkValidity()){f.reportValidity();return;}
     window.open(TG,'_blank','noopener');
     f.innerHTML='<div class="lm-ok">Спасибо! Откройте Telegram — координатор пришлёт гид и ответит на вопросы.</div><a class="btn btn--d" data-tg href="'+TG+'" target="_blank" rel="noopener" style="justify-content:center">Открыть Telegram</a>';
+  });
+})();
+
+/* ---- Заявка на расчёт: отправка в Google Sheet + Telegram-фолбэк ---- */
+(function(){
+  var f=document.getElementById('ctaForm'); if(!f) return;
+
+  /* ⚙️ КОНТАКТЫ И ЭНДПОИНТ — при необходимости заменить здесь же */
+  var WEBAPP_URL='https://script.google.com/macros/s/AKfycbwpvU9Ed-CouHqaruRbOoxzdQzawJtMrE0GVkIUrrshZwLtxUn6skfHATXCCaSOim_R/exec';
+  var WEB_LEAD_SECRET='Gt9Vz5xN_o0TQOA1UxIrCafK';   /* должен совпадать с WEB_SECRET в google-apps-script/Code.gs */
+  var TG='https://t.me/MedBridgeTourism_bot';
+  var WA='37477338333';        /* только цифры, формат 374XXXXXXXX */
+  var TEL='+37477338333';
+
+  var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+
+  function readLead(){
+    var get=function(n){var el=f.elements[n];return el&&el.value?el.value.trim():'';};
+    var chan=(f.querySelector('input[name="chan"]:checked')||{}).value||'';
+    var d=new Date();
+    var moscow='';try{moscow=d.toLocaleString('ru-RU',{timeZone:'Europe/Moscow'});}catch(e){moscow=d.toLocaleString('ru-RU');}
+    return {
+      time:moscow, iso:d.toISOString(),
+      procedure:get('procedure'), name:get('name'), phone:get('phone'),
+      comment:[get('comment'),chan?('Канал: '+chan):''].filter(Boolean).join(' · '),
+      source:'Сайт — форма расчёта', lang:'ru', secret:WEB_LEAD_SECRET
+    };
+  }
+
+  function summary(L){
+    return ['Заявка с сайта MedBridge Tourism',
+      'Имя: '+L.name, 'Контакт: '+L.phone,
+      L.procedure?('Направление: '+L.procedure):'',
+      L.comment?(L.comment):''].filter(Boolean).join('\n');
+  }
+
+  function render(html){f.innerHTML=html;f.scrollIntoView({block:'center',behavior:'smooth'});}
+
+  function successState(){
+    render(
+      '<div class="form-state form-state--ok" role="status" aria-live="polite">'
+      +'<span class="form-state__badge"><svg viewBox="0 0 52 52" aria-hidden="true"><circle class="fs-ring" cx="26" cy="26" r="24"/><path class="fs-tick" d="M16 27l7 7 14-15"/></svg></span>'
+      +'<h3 class="form-state__t">Заявка принята</h3>'
+      +'<p class="form-state__p">Спасибо! Координатор изучит вашу ситуацию и свяжется удобным способом — обычно в течение 15 минут в рабочее время.</p>'
+      +'<ul class="form-state__next"><li>Подберём клинику под ваш случай</li><li>Посчитаем смету «под ключ» — бесплатно</li><li>Ответим на вопросы, ни к чему не обязывая</li></ul>'
+      +'<a class="btn btn--d" data-tg href="'+TG+'" target="_blank" rel="noopener" style="justify-content:center">Сразу написать в Telegram</a>'
+      +'</div>'
+    );
+  }
+
+  function fallbackState(L){
+    var txt=encodeURIComponent(summary(L));
+    render(
+      '<div class="form-state form-state--warn" role="status" aria-live="polite">'
+      +'<span class="form-state__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-4 3V6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/><path d="M9 10.5l2 2 4-4"/></svg></span>'
+      +'<h3 class="form-state__t">Данные сохранены</h3>'
+      +'<p class="form-state__p">Не получилось отправить заявку автоматически, но мы сохранили ваши данные и скоро свяжемся с вами. Чтобы ускорить ответ — напишите координатору в один тап:</p>'
+      +'<div class="form-state__contacts">'
+        +'<a class="btn btn--d" href="'+TG+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4 3 11l5 2 2 6 3-4 5 4z"/><path d="M8 13l9-7"/></svg>Telegram</a>'
+        +'<a class="btn btn--wa" href="https://wa.me/'+WA+'?text='+txt+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L4 20l1.1-4.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 9.5c0 4 2 6 6 6"/></svg>WhatsApp</a>'
+        +'<a class="btn btn--ghost" href="tel:'+TEL+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 18l4 2v-2a2 2 0 0 0-2-2"/><path d="M5 4a16 16 0 0 0 16 16"/></svg>Позвонить</a>'
+      +'</div>'
+      +'<p class="form-state__hint">Ваше имя: <b>'+esc(L.name)+'</b> · контакт: <b>'+esc(L.phone)+'</b></p>'
+      +'</div>'
+    );
+  }
+
+  var sending=false;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(sending) return;
+    /* honeypot: реальный пользователь это поле не видит и не заполняет */
+    if((f.elements['company']||{}).value){successState();return;}
+    if(!f.checkValidity()){f.reportValidity();return;}
+
+    var L=readLead();
+    sending=true; f.classList.add('is-sending');
+
+    fetch(WEBAPP_URL,{
+      method:'POST', mode:'no-cors', cache:'no-store',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(L)
+    }).then(function(){
+      successState();
+    }).catch(function(){
+      try{
+        var box=JSON.parse(localStorage.getItem('mb_leads')||'[]');
+        box.push(L); localStorage.setItem('mb_leads',JSON.stringify(box));
+      }catch(_){}
+      fallbackState(L);
+    });
   });
 })();
 </script>
