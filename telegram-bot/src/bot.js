@@ -1,3 +1,4 @@
+import http from 'node:http';
 import { Telegraf, session } from 'telegraf';
 import { config, warnOptional } from './config.js';
 import { createFileSessionStore } from './sessionStore.js';
@@ -63,8 +64,23 @@ const COMMANDS = [
   { command: 'help', description: 'Помощь / Help / Օգնություն' },
 ];
 
+// Tiny HTTP server so free PaaS platforms (Koyeb/Render/etc.) that expect an
+// open port keep the worker alive and have a health/keep-alive URL to ping.
+// Only starts when PORT is provided by the platform; no-op for local polling.
+function startHealthServer() {
+  const port = process.env.PORT;
+  if (!port) return;
+  http
+    .createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('MedBridge Tourism bot — OK');
+    })
+    .listen(port, () => console.log(`[bot] health server listening on :${port}`));
+}
+
 async function main() {
   warnOptional();
+  startHealthServer();
   await bot.telegram.setMyCommands(COMMANDS).catch((e) => console.warn('[bot] setMyCommands failed:', e.message));
   const me = await bot.telegram.getMe();
   console.log(`[bot] @${me.username} is up (long polling). Press Ctrl+C to stop.`);
