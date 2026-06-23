@@ -64,6 +64,11 @@ export function createFileSessionStore(file) {
       map.delete(name);
       scheduleSave();
     },
+    // Snapshot of all sessions — used by the abandoned-lead nudge sweep.
+    async entries() {
+      await load();
+      return [...map.entries()];
+    },
     flush,
   };
 }

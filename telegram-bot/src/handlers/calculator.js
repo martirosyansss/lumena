@@ -7,6 +7,7 @@ import {
   calcResultKeyboard,
 } from '../keyboards.js';
 import { getLang, ack, editHtml } from '../ui.js';
+import { track } from '../analytics.js';
 
 const MAX_QTY = 20;
 
@@ -40,6 +41,7 @@ export function register(bot) {
   bot.action('m:calc', async (ctx) => {
     const lang = getLang(ctx);
     ctx.session.calc = undefined;
+    track('calc_used');
     await ack(ctx);
     await editHtml(ctx, t(lang, 'calc_choose_dir'), calcDirKeyboard(lang));
   });

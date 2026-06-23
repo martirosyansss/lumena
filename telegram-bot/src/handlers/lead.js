@@ -11,6 +11,7 @@ import {
 } from '../keyboards.js';
 import { getLang, ack, sendHtml, editHtml, resetFlows } from '../ui.js';
 import { submitLead } from '../leads.js';
+import { track } from '../analytics.js';
 
 const MAX_NAME = 60;
 const MAX_COMMENT = 600;
@@ -39,7 +40,14 @@ function coordinatorContactHtml() {
 async function startLead(ctx, { edit }) {
   const lang = getLang(ctx);
   ctx.session.calc = undefined;
-  ctx.session.lead = { step: 'procedure', source: ctx.session.lastSource || 'menu' };
+  ctx.session.lead = {
+    step: 'procedure',
+    source: ctx.session.lastSource || 'menu',
+    startedAt: Date.now(),
+    chatId: ctx.chat?.id,
+    nudged: false,
+  };
+  track('lead_started');
   const text = t(lang, 'lead_intro');
   if (edit) return editHtml(ctx, text, leadProcKeyboard(lang));
   return sendHtml(ctx, text, leadProcKeyboard(lang));
@@ -128,12 +136,27 @@ export function register(bot) {
     if (!l || l.step !== 'confirm') return ack(ctx);
     await ack(ctx);
 
+    const now = Date.now();
+    const today = new Date().toISOString().slice(0, 10);
+    if (ctx.session.leadDay !== today) {
+      ctx.session.leadDay = today;
+      ctx.session.leadCount = 0;
+    }
+
     // Throttle repeat submissions so one user can't flood the manager / Sheet.
-    if (Date.now() - (ctx.session.lastLeadAt || 0) < LEAD_COOLDOWN_MS) {
+    if (now - (ctx.session.lastLeadAt || 0) < LEAD_COOLDOWN_MS) {
+      track('spam_blocked');
       resetFlows(ctx);
       return sendHtml(ctx, t(lang, 'lead_too_soon'), backToMenu(lang));
     }
-    ctx.session.lastLeadAt = Date.now();
+    // Daily cap per user.
+    if ((ctx.session.leadCount || 0) >= config.dailyLeadLimit) {
+      track('spam_blocked');
+      resetFlows(ctx);
+      return sendHtml(ctx, t(lang, 'lead_daily_limit'), backToMenu(lang));
+    }
+    ctx.session.lastLeadAt = now;
+    ctx.session.leadCount = (ctx.session.leadCount || 0) + 1;
 
     const lead = {
       procedure: l.procedure,
@@ -154,6 +177,7 @@ export function register(bot) {
 
     const contact = coordinatorContactHtml();
     if (result.ok) {
+      track('lead_completed');
       const contactPart = contact ? t(lang, 'lead_submitted_contact', { contact }) : '';
       await sendHtml(ctx, t(lang, 'lead_submitted', { name: escapeHtml(lead.name), contact: contactPart }), backToMenu(lang));
     } else {

@@ -125,6 +125,12 @@ const ru = {
   lead_too_soon:
     'Вы только что оставили заявку — координатор уже получил её и скоро свяжется. ' +
     'Если вопрос срочный, напишите напрямую 👇',
+  lead_daily_limit:
+    'Вы уже оставили несколько заявок сегодня — все они у координатора, он скоро свяжется. ' +
+    'Если нужно срочно, напишите напрямую 👇',
+  lead_nudge:
+    '👋 Вы начали оформлять заявку, но не закончили. Продолжим? Это займёт минуту, ' +
+    'а координатор бесплатно подберёт клинику и посчитает смету «под ключ» за 1 день — без обязательств.',
   no_comment: '—',
 
   contact_text: 'Личный координатор MedBridge Tourism на связи 24/7:\n\n{links}\n\nНапишите в удобном канале — ответим и поможем.',
@@ -253,6 +259,12 @@ const en = {
   lead_too_soon:
     'You just submitted a request — the coordinator already has it and will contact you soon. ' +
     'If it is urgent, write directly 👇',
+  lead_daily_limit:
+    'You have already submitted several requests today — the coordinator has them all and will contact you soon. ' +
+    'If it is urgent, write directly 👇',
+  lead_nudge:
+    "👋 You started a request but didn't finish. Shall we continue? It takes a minute, and a coordinator " +
+    'will match a clinic and prepare a free turnkey estimate within 1 day — no obligation.',
   no_comment: '—',
 
   contact_text: 'Your personal MedBridge Tourism coordinator is available 24/7:\n\n{links}\n\nWrite on any convenient channel — we will help.',
@@ -381,6 +393,12 @@ const hy = {
   lead_too_soon:
     'Դուք հենց նոր թողեցիք հայտ — համակարգողն արդեն ստացել է այն և շուտով կկապվի։ ' +
     'Եթե հարցը շտապ է, գրեք ուղիղ 👇',
+  lead_daily_limit:
+    'Դուք այսօր արդեն մի քանի հայտ եք թողել — բոլորը համակարգողի մոտ են, նա շուտով կկապվի։ ' +
+    'Եթե շտապ է, գրեք ուղիղ 👇',
+  lead_nudge:
+    '👋 Դուք սկսեցիք հայտը, բայց չավարտեցիք։ Շարունակե՞նք։ Սա մեկ րոպե կտևի, ' +
+    'իսկ համակարգողը անվճար կընտրի կլինիկա և 1 օրում կհաշվի «բանալին ձեռքին» նախահաշիվը՝ առանց պարտավորության։',
   no_comment: '—',
 
   contact_text: 'MedBridge Tourism-ի անձնական համակարգողը կապի մեջ է 24/7՝\n\n{links}\n\nԳրեք Ձեզ հարմар ուղիով — կօգնենք։',

@@ -2,6 +2,7 @@ import { t } from '../i18n.js';
 import { languageKeyboard, mainMenu } from '../keyboards.js';
 import { getLang, ack, sendHtml, editHtml, showMenu, resetFlows } from '../ui.js';
 import { guideView } from './menu.js';
+import { track } from '../analytics.js';
 
 async function sendWelcome(ctx) {
   const lang = getLang(ctx);
@@ -18,6 +19,7 @@ async function sendGuide(ctx) {
 export function register(bot) {
   bot.start(async (ctx) => {
     resetFlows(ctx);
+    track('start');
     // Website lead magnet sends users here via t.me/<bot>?start=guide2026.
     const wantsGuide = /^guide/i.test(ctx.startPayload || '');
     if (!ctx.session.lang) {
@@ -57,6 +59,7 @@ export function register(bot) {
     const firstTime = !ctx.session.lang;
     ctx.session.lang = ctx.match[1];
     const lang = ctx.session.lang;
+    if (firstTime) track('lang_set');
     await ack(ctx);
     // Arrived via the guide deep-link and just picked a language → show the guide.
     if (ctx.session.pendingGuide) {

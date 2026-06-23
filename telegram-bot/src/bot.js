@@ -9,6 +9,8 @@ import * as start from './handlers/start.js';
 import * as menu from './handlers/menu.js';
 import * as calculator from './handlers/calculator.js';
 import * as lead from './handlers/lead.js';
+import * as admin from './admin.js';
+import { track } from './analytics.js';
 
 const bot = new Telegraf(config.botToken, { handlerTimeout: 30_000 });
 
@@ -26,12 +28,39 @@ bot.use((ctx, next) => {
   return next();
 });
 
+// --- Anti-spam flood guard: drop a user's updates past a short-window burst ---
+const floodHits = new Map();
+const FLOOD_WINDOW = 10_000;
+const FLOOD_MAX = 15;
+bot.use(async (ctx, next) => {
+  const id = ctx.from?.id;
+  if (!id) return next();
+  if (floodHits.size > 10_000) floodHits.clear(); // bound memory on long uptime
+  const now = Date.now();
+  const arr = (floodHits.get(id) || []).filter((ts) => now - ts < FLOOD_WINDOW);
+  arr.push(now);
+  floodHits.set(id, arr);
+  if (arr.length > FLOOD_MAX) {
+    track('spam_blocked');
+    if (ctx.callbackQuery) {
+      try {
+        await ctx.answerCbQuery('Слишком часто — подождите немного');
+      } catch {
+        /* stale */
+      }
+    }
+    return; // drop the update
+  }
+  return next();
+});
+
 // --- Feature handlers (order matters: lead's text/contact handlers must run
 //     before the generic fallbacks below) -----------------------------------
 start.register(bot);
 menu.register(bot);
 calculator.register(bot);
 lead.register(bot);
+admin.register(bot);
 
 // --- Fallbacks --------------------------------------------------------------
 // Any other text → if no language yet, ask for it; otherwise nudge to the menu.
@@ -106,6 +135,8 @@ async function main() {
   await bot.telegram.setMyCommands(COMMANDS).catch((e) => console.warn('[bot] setMyCommands failed:', e.message));
   const me = await bot.telegram.getMe();
   console.log(`[bot] @${me.username} starting polling… (one instance only)`);
+  admin.startupAlert(bot);
+  admin.startNudgeSweep(bot, sessionStore);
   await launchWithRetry();
 }
 

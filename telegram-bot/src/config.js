@@ -65,6 +65,14 @@ export const config = {
   siteUrl: clean(process.env.SITE_URL) || 'https://medbridge-tourism.com',
   defaultLang: clean(process.env.DEFAULT_LANG) || 'ru',
   leadsFile: clean(process.env.LEADS_FILE) || 'data/leads.jsonl',
+
+  // Admin user ids (comma-separated) allowed to run /stats in a private chat.
+  // /stats also works inside the manager group regardless of this list.
+  adminIds: clean(process.env.ADMIN_IDS).split(',').map((s) => s.trim()).filter(Boolean),
+  // Anti-spam: max completed leads per user per calendar day.
+  dailyLeadLimit: Number(process.env.DAILY_LEAD_LIMIT) || 5,
+  // Re-engagement: nudge an abandoned lead after this many minutes.
+  nudgeAfterMin: Number(process.env.NUDGE_AFTER_MIN) || 20,
 };
 
 /** Print non-fatal warnings about optional-but-recommended config at boot. */

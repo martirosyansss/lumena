@@ -4,6 +4,7 @@ import { t, escapeHtml } from '../i18n.js';
 import { SAVINGS, L } from '../catalog.js';
 import { faqKeyboard, faqAnswerKeyboard, backToMenu } from '../keyboards.js';
 import { getLang, ack, editHtml } from '../ui.js';
+import { track } from '../analytics.js';
 
 // Inline keyboard reused under content screens: primary CTA + calc + menu.
 function contentKeyboard(lang) {
@@ -70,6 +71,7 @@ export function register(bot) {
 
   bot.action('m:faq', async (ctx) => {
     const lang = getLang(ctx);
+    track('faq_view');
     await ack(ctx);
     await editHtml(ctx, t(lang, 'faq_title'), faqKeyboard(lang));
   });
