@@ -1,4 +1,18 @@
-import 'dotenv/config';
+import fs from 'node:fs';
+import dotenv from 'dotenv';
+
+// Load the local .env (if any) first...
+dotenv.config();
+// ...then fall back to PaaS "secret file" mounts (Render mounts Secret Files at
+// /etc/secrets/<name>). Lets you paste the whole .env as one file instead of
+// entering each variable separately. Existing vars are not overwritten.
+for (const p of ['/etc/secrets/.env', '/etc/secrets/env']) {
+  try {
+    if (fs.existsSync(p)) dotenv.config({ path: p });
+  } catch {
+    /* ignore */
+  }
+}
 
 const clean = (v) => (typeof v === 'string' ? v.trim() : '');
 
